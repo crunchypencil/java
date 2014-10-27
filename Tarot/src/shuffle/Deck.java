@@ -1,3 +1,6 @@
+package shuffle;
+
+
 public class Deck {
 	
 	static String[][] tarotdeck = new String[][] {
@@ -626,9 +629,5 @@ public class Deck {
 			"Reversed: Cruelty, perversity, barbarity, perfidy, evil intention.",	
 		}
 	};
-	
-	public static void main (String[] args){
-		System.out.println(tarotdeck.length);
-	}
 	
 }
