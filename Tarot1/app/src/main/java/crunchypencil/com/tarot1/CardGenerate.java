@@ -9,7 +9,7 @@ public class CardGenerate {
     String cardImage;
     String cardDescribe;
     String cardMeaning;
-    //boolean cardUp;
+    static boolean cardUp;
 
     public CardGenerate (int index/*, boolean up*/) {
 
@@ -20,10 +20,12 @@ public class CardGenerate {
             cardName = Deck.tarotdeck[index][0];
             cardImage = Deck.tarotdeck[index][2];
             cardMeaning = Deck.tarotdeck[index][5];
-        } else {
+            cardUp = true;
+        } else { // inverted values
             cardName = Deck.tarotdeck[index][0] + ", inverted";
             cardImage = Deck.tarotdeck[index][3];
             cardMeaning = Deck.tarotdeck[index][6];
+            cardUp = false;
         }
     }
 }

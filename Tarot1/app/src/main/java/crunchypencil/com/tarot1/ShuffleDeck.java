@@ -17,13 +17,12 @@ public class ShuffleDeck extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shuffle);
 
-        int[] temparray = makeArray();
-        Deck.tempdeck = shuffleArray(temparray);
+        Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
         Deck.count = 0;
 
     }
 
-    public static int[] makeArray() {
+    /*public static int[] makeArray() {
         int[] sample = new int[Deck.tempdeck.length];
         for (int i = 0; i < sample.length; i++) {
             sample[i] = i;
@@ -42,7 +41,7 @@ public class ShuffleDeck extends Activity {
             numbers[select] = temp;
         }
         return numbers;
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

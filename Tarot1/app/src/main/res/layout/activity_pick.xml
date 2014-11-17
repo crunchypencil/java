@@ -11,24 +11,42 @@
     android:background="#FFFFFF"
     android:longClickable="true">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pickacardView"
+        android:src="@drawable/back"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/pickCard1"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:typeface="serif"
+        android:textStyle="bold"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text="DESCRIPTION"
         android:id="@+id/pickCard2"
         android:layout_below="@+id/pickCard1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="#aaaaaa"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,18 +55,40 @@
         android:id="@+id/pickCard3"
         android:layout_below="@+id/pickCard2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000000"
+        android:textSize="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEANING"
+        android:id="@+id/pickCard4"
+        android:layout_below="@+id/pickCard3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="#aaaaaa"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/pickCard4"
-        android:layout_below="@+id/pickCard3"
+        android:id="@+id/pickCard5"
+        android:layout_below="@+id/pickCard4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:maxLines = "500"
-        android:scrollbars = "vertical"/>
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000000"
+        android:textSize="16dp" />
+
+
 
     <!--<Button
         android:layout_width="wrap_content"

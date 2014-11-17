@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Context;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.Button;
 import android.view.View;
@@ -29,15 +31,28 @@ public class PickCard extends Activity {
 
             CardGenerate current = new CardGenerate(Deck.tempdeck[Deck.count]);
 
+            ImageView cardimg = (ImageView) findViewById(R.id.pickacardView);
+
+            String imageName = "back";
+            int resID = getResources().getIdentifier(imageName, "drawable", "package.name");
+            cardimg.setImageResource(resID);
+
+            //ImageView cardimg = (ImageView) findViewById(R.id.pickacardView);
+            //cardimg.setImageResource(R.drawable.back);
+
+
+
+            if(!CardGenerate.cardUp) { // turn image upside down if !cardUp
+                cardimg.setScaleX(-1);
+                cardimg.setScaleY(-1);
+            }
+
             TextView cardNameValue = (TextView) findViewById(R.id.pickCard1);
             cardNameValue.setText(current.cardName);
-            TextView cardImageValue = (TextView) findViewById(R.id.pickCard2);
-            cardImageValue.setText(current.cardImage);
             TextView cardDescribeValue = (TextView) findViewById(R.id.pickCard3);
             cardDescribeValue.setText(current.cardDescribe);
-            TextView cardMeaningValue = (TextView) findViewById(R.id.pickCard4);
+            TextView cardMeaningValue = (TextView) findViewById(R.id.pickCard5);
             cardMeaningValue.setText(current.cardMeaning);
-            cardMeaningValue.setMovementMethod(new ScrollingMovementMethod());
 
             Deck.count++;
 

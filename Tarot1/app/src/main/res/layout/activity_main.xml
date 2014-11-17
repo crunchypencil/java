@@ -13,10 +13,11 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/imageView"
-        android:src="@drawable/fatebrowser_deck"
+        android:id="@+id/mainlogoImage"
+        android:src="@drawable/ic_launcher"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 
 
@@ -14,6 +15,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+        Deck.count = 0;
+
+        ImageView img = (ImageView) findViewById(R.id.mainlogoImage);
+        img.setImageResource(R.drawable.fatebrowser_deck);
+        //img.setImageResource(R.drawable.back);
+        //img.setScaleX(-1);
+        //img.setScaleY(-1);
     }
 
 
