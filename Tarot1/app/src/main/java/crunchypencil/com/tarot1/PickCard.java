@@ -2,20 +2,20 @@ package crunchypencil.com.tarot1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.content.Context;
-import android.text.method.ScrollingMovementMethod;
-import android.widget.Button;
+import android.view.View.OnClickListener;
 import android.view.View;
+import android.text.method.ScrollingMovementMethod;
 
 /**
  * Created by davidcahill on 11/12/14.
  */
-public class PickCard extends Activity {
+public class PickCard extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -55,6 +55,26 @@ public class PickCard extends Activity {
             cardMeaningValue.setText(current.cardMeaning);
 
             Deck.count++;
+
+            final ImageView pickView1 = (ImageView) findViewById(R.id.pickacardView);
+
+            pickView1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    pickView1.setVisibility(View.INVISIBLE);
+                    MediaPlayer mp1 = MediaPlayer.create(PickCard.this, R.raw.place);
+                    mp1.start();
+                }
+            });
+
+            TextView tv1 = (TextView) findViewById(R.id.pickCard3);
+            tv1.setMovementMethod(new ScrollingMovementMethod());
+
+            TextView tv2 = (TextView) findViewById(R.id.pickCard5);
+            tv2.setMovementMethod(new ScrollingMovementMethod());
+
+            MediaPlayer mp2 = MediaPlayer.create(PickCard.this, R.raw.turnover);
+            mp2.start();
 
         }
 

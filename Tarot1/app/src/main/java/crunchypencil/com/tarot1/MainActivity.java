@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.view.View.OnClickListener;
+
 
 
 
@@ -21,9 +24,15 @@ public class MainActivity extends Activity {
 
         ImageView img = (ImageView) findViewById(R.id.mainlogoImage);
         img.setImageResource(R.drawable.fatebrowser_deck);
-        //img.setImageResource(R.drawable.back);
-        //img.setScaleX(-1);
-        //img.setScaleY(-1);
+
+        img.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, ShuffleDeck.class));
+            }
+        });
+
+
     }
 
 

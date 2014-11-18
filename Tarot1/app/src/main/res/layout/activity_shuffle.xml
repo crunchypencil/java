@@ -17,6 +17,7 @@
         android:id="@+id/shuffledeckView"
         android:src="@drawable/back"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick" />
 
 </RelativeLayout>

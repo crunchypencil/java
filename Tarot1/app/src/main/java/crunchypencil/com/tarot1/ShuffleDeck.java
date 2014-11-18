@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.media.MediaPlayer;
 
 /**
  * Created by davidcahill on 11/12/14.
@@ -19,6 +21,18 @@ public class ShuffleDeck extends Activity {
 
         Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
         Deck.count = 0;
+
+        ImageView shufimg = (ImageView) findViewById(R.id.shuffledeckView);
+
+        shufimg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(ShuffleDeck.this, PickCard.class));
+            }
+        });
+
+        MediaPlayer mp = MediaPlayer.create(ShuffleDeck.this, R.raw.shuffling);
+        mp.start();
 
     }
 
