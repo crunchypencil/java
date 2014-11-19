@@ -22,10 +22,12 @@
         android:textSize="20dp"
         android:typeface="serif"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
         android:maxWidth="290dp"
-        android:layout_marginBottom="12dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/pickCard4"
+        android:layout_alignStart="@+id/pickCard4"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +37,8 @@
         android:textColor="#aaaaaa"
         android:textSize="12dp"
         android:layout_below="@+id/pickCard1"
-        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/pickacardView"
+        android:layout_toEndOf="@+id/pickacardView"
         android:layout_marginBottom="2dp" />
 
     <TextView
@@ -46,15 +49,15 @@
         android:textColor="#000000"
         android:textSize="16dp"
         android:layout_below="@+id/pickCard2"
-        android:layout_centerHorizontal="true"
-        android:maxWidth="260dp"
-        android:layout_marginBottom="12dp"
-        android:maxLines="8"
+        android:maxLines="5"
         android:scrollbars="vertical"
         android:scrollbarSize="8dp"
         android:scrollbarStyle="outsideInset"
         android:fadeScrollbars="false"
-        android:ellipsize="end"/>
+        android:ellipsize="end"
+        android:layout_toRightOf="@+id/pickacardView"
+        android:layout_toEndOf="@+id/pickacardView"
+        android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,24 +77,24 @@
         android:id="@+id/pickCard5"
         android:textColor="#000000"
         android:textSize="16dp"
-        android:layout_below="@+id/pickCard4"
-        android:layout_centerHorizontal="true"
-        android:maxLines="8"
+        android:maxLines="5"
         android:scrollbars="vertical"
         android:scrollbarSize="8dp"
         android:scrollbarStyle="outsideInset"
         android:fadeScrollbars="false"
         android:ellipsize="end"
-        android:maxWidth="260dp" />
+        android:layout_below="@+id/pickCard4"
+        android:layout_toRightOf="@+id/pickacardView"
+        android:layout_toEndOf="@+id/pickacardView" />
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/pickacardView"
         android:src="@drawable/back"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/pickCard1" />
 
     <!--<Button
         android:layout_width="wrap_content"

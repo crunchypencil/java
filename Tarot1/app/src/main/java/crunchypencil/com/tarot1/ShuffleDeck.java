@@ -36,26 +36,6 @@ public class ShuffleDeck extends Activity {
 
     }
 
-    /*public static int[] makeArray() {
-        int[] sample = new int[Deck.tempdeck.length];
-        for (int i = 0; i < sample.length; i++) {
-            sample[i] = i;
-        }
-        return sample;
-    }
-
-    public static int[] shuffleArray(int[] numbers) {
-
-        for (int i = numbers.length - 1; i > 0; i--) {
-            int select = (int) (Math.random() * (i + 1)); // 0 <= select <= i
-
-            // swap current value with selected value
-            int temp = numbers[i];
-            numbers[i] = numbers[select];
-            numbers[select] = temp;
-        }
-        return numbers;
-    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

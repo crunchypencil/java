@@ -8,9 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 import android.view.View;
 import android.text.method.ScrollingMovementMethod;
+
 
 /**
  * Created by davidcahill on 11/12/14.
@@ -20,6 +20,12 @@ public class PickCard extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
+        int orient = getResources().getConfiguration().orientation;
+        if (orient==2){
+            getActionBar().hide();  //hide if orientation is horizontal
+        }
+
         setContentView(R.layout.activity_pick);
 
         if(Deck.count==Deck.tempdeck.length){
@@ -36,10 +42,6 @@ public class PickCard extends Activity{
             String imageName = "back";
             int resID = getResources().getIdentifier(imageName, "drawable", "package.name");
             cardimg.setImageResource(resID);
-
-            //ImageView cardimg = (ImageView) findViewById(R.id.pickacardView);
-            //cardimg.setImageResource(R.drawable.back);
-
 
 
             if(!CardGenerate.cardUp) { // turn image upside down if !cardUp
@@ -64,6 +66,7 @@ public class PickCard extends Activity{
                     pickView1.setVisibility(View.INVISIBLE);
                     MediaPlayer mp1 = MediaPlayer.create(PickCard.this, R.raw.place);
                     mp1.start();
+                    getActionBar().show();
                 }
             });
 
@@ -77,14 +80,6 @@ public class PickCard extends Activity{
             mp2.start();
 
         }
-
-        /*Button shuffler = (Button) findViewById(R.id.shufflebutton);
-        shuffler.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(this, ShuffleDeck.class);
-                startActivity(intent);
-            }
-        });*/
 
     }
 
@@ -117,7 +112,5 @@ public class PickCard extends Activity{
         }
         return true;
     }
-
-
 
 }
