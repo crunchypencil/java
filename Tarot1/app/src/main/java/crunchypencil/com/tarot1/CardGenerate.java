@@ -14,16 +14,15 @@ public class CardGenerate {
     public CardGenerate (int index/*, boolean up*/) {
 
         cardDescribe = Deck.tarotdeck[index][4];
+        cardImage = Deck.tarotdeck[index][2];
 
         double invran = Math.random();
         if (invran <= .5) {
             cardName = Deck.tarotdeck[index][0];
-            cardImage = Deck.tarotdeck[index][2];
             cardMeaning = Deck.tarotdeck[index][5];
             cardUp = true;
         } else { // inverted values
             cardName = Deck.tarotdeck[index][0] + ", inverted";
-            cardImage = Deck.tarotdeck[index][3];
             cardMeaning = Deck.tarotdeck[index][6];
             cardUp = false;
         }
