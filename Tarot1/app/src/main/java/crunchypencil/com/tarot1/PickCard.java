@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
 import android.text.method.ScrollingMovementMethod;
+import android.graphics.drawable.Drawable;
 
 
 /**
@@ -20,6 +21,7 @@ public class PickCard extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
 
         int orient = getResources().getConfiguration().orientation;
         if (orient==2){
@@ -37,14 +39,15 @@ public class PickCard extends Activity{
 
             CardGenerate current = new CardGenerate(Deck.tempdeck[Deck.count]);
 
-            ImageView cardimg = (ImageView) findViewById(R.id.pickacardView);
+            String uri = "@drawable/"+current.cardImage;
 
-            String imageName = "back";
-            int resID = getResources().getIdentifier(imageName, "drawable", "package.name");
-            cardimg.setImageResource(resID);
+            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+            final ImageView cardimg = (ImageView)findViewById(R.id.pickacardView);
+            Drawable res = getResources().getDrawable(imageResource);
+            cardimg.setImageDrawable(res);
 
 
-            if(!CardGenerate.cardUp) { // turn image upside down if !cardUp
+            if(!CardGenerate.cardUp) {  // turn image upside down if !cardUp
                 cardimg.setScaleX(-1);
                 cardimg.setScaleY(-1);
             }
@@ -58,12 +61,10 @@ public class PickCard extends Activity{
 
             Deck.count++;
 
-            final ImageView pickView1 = (ImageView) findViewById(R.id.pickacardView);
-
-            pickView1.setOnClickListener(new View.OnClickListener() {
+            cardimg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v){
-                    pickView1.setVisibility(View.INVISIBLE);
+                    cardimg.setVisibility(View.INVISIBLE);
                     MediaPlayer mp1 = MediaPlayer.create(PickCard.this, R.raw.place);
                     mp1.start();
                     getActionBar().show();
@@ -78,9 +79,7 @@ public class PickCard extends Activity{
 
             MediaPlayer mp2 = MediaPlayer.create(PickCard.this, R.raw.turnover);
             mp2.start();
-
         }
-
     }
 
 
@@ -98,19 +97,25 @@ public class PickCard extends Activity{
                 Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
                 this.startActivity(intent_shuffle);
                 break;
+            case R.id.action_shuff:
+                Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+                this.startActivity(intent_shuff);
+                break;
             case R.id.action_pick:
                 Intent intent_pick = new Intent(this, PickCard.class);
                 this.startActivity(intent_pick);
+                break;
+            case R.id.action_pic:
+                Intent intent_pic = new Intent(this, PickCard.class);
+                this.startActivity(intent_pic);
                 break;
             case R.id.action_home:
                 Intent intent_home = new Intent(this, MainActivity.class);
                 this.startActivity(intent_home);
                 break;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
         return true;
     }
-
 }

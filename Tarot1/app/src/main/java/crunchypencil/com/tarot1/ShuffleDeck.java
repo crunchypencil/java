@@ -51,15 +51,22 @@ public class ShuffleDeck extends Activity {
                 Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
                 this.startActivity(intent_shuffle);
                 break;
+            case R.id.action_shuff:
+                Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+                this.startActivity(intent_shuff);
+                break;
             case R.id.action_pick:
                 Intent intent_pick = new Intent(this, PickCard.class);
                 this.startActivity(intent_pick);
+                break;
+            case R.id.action_pic:
+                Intent intent_pic = new Intent(this, PickCard.class);
+                this.startActivity(intent_pic);
                 break;
             case R.id.action_home:
                 Intent intent_home = new Intent(this, MainActivity.class);
                 this.startActivity(intent_home);
                 break;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
