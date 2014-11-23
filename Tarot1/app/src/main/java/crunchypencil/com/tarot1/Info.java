@@ -5,30 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.view.View.OnClickListener;
 
 
-public class MainActivity extends Activity {
+public class Info extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_info);
 
-        Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-        Deck.count = 0;
-
-        ImageView img = (ImageView) findViewById(R.id.mainlogoImage);
-        img.setImageResource(R.drawable.fatebrowser_deck);
-
-        img.setOnClickListener(new OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, ShuffleDeck.class));
-            }
-        });
 
 
     }
