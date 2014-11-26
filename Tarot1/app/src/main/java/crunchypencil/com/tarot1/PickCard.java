@@ -25,7 +25,7 @@ public class PickCard extends Activity{
 
         int orient = getResources().getConfiguration().orientation;
         //if (orient==2){
-            getActionBar().hide();  //hide if orientation is horizontal
+            //getActionBar().hide();  //hide if orientation is horizontal
         //}
 
         setContentView(R.layout.activity_pick);
@@ -37,7 +37,7 @@ public class PickCard extends Activity{
 
         } else {
 
-            CardGenerate current = new CardGenerate(Deck.tempdeck[Deck.count]);
+            CardGenerate current = new CardGenerate(Deck.tempdeck[Deck.count], true);
 
             String uri = "@drawable/"+current.cardImage;
 
@@ -67,7 +67,7 @@ public class PickCard extends Activity{
                     cardimg.setVisibility(View.INVISIBLE);
                     MediaPlayer mp1 = MediaPlayer.create(PickCard.this, R.raw.place);
                     mp1.start();
-                    getActionBar().show();
+                    //getActionBar().show();
                 }
             });
 
@@ -103,10 +103,12 @@ public class PickCard extends Activity{
                 break;
             case R.id.action_pick:
                 Intent intent_pick = new Intent(this, PickCard.class);
+                finish();
                 this.startActivity(intent_pick);
                 break;
             case R.id.action_pic:
                 Intent intent_pic = new Intent(this, PickCard.class);
+                finish();
                 this.startActivity(intent_pic);
                 break;
             case R.id.action_info:
