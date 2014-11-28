@@ -50,6 +50,13 @@ public class Info extends Activity {
                 Intent intent_info = new Intent(this, Info.class);
                 this.startActivity(intent_info);
                 break;
+            case R.id.action_sound:
+                if(Deck.soundon){
+                    Deck.soundon = false;
+                } else {
+                    Deck.soundon = true;
+                }
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }

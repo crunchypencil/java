@@ -65,8 +65,10 @@ public class PickCard extends Activity{
                 @Override
                 public void onClick(View v){
                     cardimg.setVisibility(View.INVISIBLE);
-                    MediaPlayer mp1 = MediaPlayer.create(PickCard.this, R.raw.place);
-                    mp1.start();
+                    if(Deck.soundon) {
+                        MediaPlayer mp1 = MediaPlayer.create(PickCard.this, R.raw.place);
+                        mp1.start();
+                    }
                     //getActionBar().show();
                 }
             });
@@ -77,8 +79,10 @@ public class PickCard extends Activity{
             TextView tv2 = (TextView) findViewById(R.id.pickCard5);
             tv2.setMovementMethod(new ScrollingMovementMethod());
 
-            MediaPlayer mp2 = MediaPlayer.create(PickCard.this, R.raw.turnover);
-            mp2.start();
+            if(Deck.soundon) {
+                MediaPlayer mp2 = MediaPlayer.create(PickCard.this, R.raw.turnover);
+                mp2.start();
+            }
         }
     }
 
@@ -114,6 +118,13 @@ public class PickCard extends Activity{
             case R.id.action_info:
                 Intent intent_info = new Intent(this, Info.class);
                 this.startActivity(intent_info);
+                break;
+            case R.id.action_sound:
+                if(Deck.soundon){
+                    Deck.soundon = false;
+                } else {
+                    Deck.soundon = true;
+                }
                 break;
             default:
                 return super.onOptionsItemSelected(item);

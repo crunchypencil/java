@@ -2,9 +2,11 @@
 <resources>
 
     <string name="app_name">Fate Browser</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_home">Home</string>
+    <string name="action_info">Info</string>
     <string name="action_shuffle">Shuffle the deck</string>
     <string name="action_pick">Draw a card</string>
+    <string name="action_sound">Sound on/off</string>
+    <string name="action_order">Ordered deck</string>
 
 </resources>

@@ -31,8 +31,10 @@ public class ShuffleDeck extends Activity {
             }
         });
 
-        MediaPlayer mp = MediaPlayer.create(ShuffleDeck.this, R.raw.shuffling);
-        mp.start();
+        if(Deck.soundon) {
+            MediaPlayer mp = MediaPlayer.create(ShuffleDeck.this, R.raw.shuffling);
+            mp.start();
+        }
 
     }
 
@@ -66,6 +68,13 @@ public class ShuffleDeck extends Activity {
             case R.id.action_info:
                 Intent intent_info = new Intent(this, Info.class);
                 this.startActivity(intent_info);
+                break;
+            case R.id.action_sound:
+                if(Deck.soundon){
+                    Deck.soundon = false;
+                } else {
+                    Deck.soundon = true;
+                }
                 break;
             default:
                 return super.onOptionsItemSelected(item);

@@ -6,6 +6,8 @@ package crunchypencil.com.tarot1;
 
 public class Deck {
 
+    static boolean soundon = true;
+
     static int count = 0;
 
     static int[] tempdeck = new int[78]; // length of the deck
