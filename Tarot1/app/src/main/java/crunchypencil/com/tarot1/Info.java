@@ -2,9 +2,13 @@ package crunchypencil.com.tarot1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Context;
+import android.widget.Toast;
+
 
 
 public class Info extends Activity {
@@ -29,6 +33,10 @@ public class Info extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+
         switch(item.getItemId()) {
             case R.id.action_shuffle:
                 Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
@@ -53,8 +61,14 @@ public class Info extends Activity {
             case R.id.action_sound:
                 if(Deck.soundon){
                     Deck.soundon = false;
+                    Toast toast = Toast.makeText(context, "Sound OFF", duration);
+                    toast.show();
                 } else {
                     Deck.soundon = true;
+                    MediaPlayer mp2 = MediaPlayer.create(Info.this, R.raw.place);
+                    mp2.start();
+                    Toast toast = Toast.makeText(context, "Sound ON", duration);
+                    toast.show();
                 }
                 break;
             default:

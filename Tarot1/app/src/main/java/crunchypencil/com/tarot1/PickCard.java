@@ -11,6 +11,9 @@ import android.widget.TextView;
 import android.view.View;
 import android.text.method.ScrollingMovementMethod;
 import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.widget.Toast;
+
 
 
 /**
@@ -96,6 +99,10 @@ public class PickCard extends Activity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+
         switch(item.getItemId()) {
             case R.id.action_shuffle:
                 Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
@@ -122,8 +129,14 @@ public class PickCard extends Activity{
             case R.id.action_sound:
                 if(Deck.soundon){
                     Deck.soundon = false;
+                    Toast toast = Toast.makeText(context, "Sound OFF", duration);
+                    toast.show();
                 } else {
                     Deck.soundon = true;
+                    MediaPlayer mp2 = MediaPlayer.create(PickCard.this, R.raw.place);
+                    mp2.start();
+                    Toast toast = Toast.makeText(context, "Sound ON", duration);
+                    toast.show();
                 }
                 break;
             default:

@@ -4,28 +4,42 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:id="@+id/shuffle"
+    android:id="@+id/info"
     android:background="#FFFFFF"
     android:longClickable="true">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/fatebrowser_title"
+        android:layout_marginTop="0dp" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:textAppearanceSmall"
-        android:text="Fate Browser does not use, collect or share any of your data. Fate Browser is \u00A92014 Crunchy Pencil Design."
+        android:text="I made Fate Browser because I wanted a pocket deck of tarot cards and all that I could find contained adware or malware, and most of the apps didn't take advantage of the reversed meanings of inverted cards. \n\nFate Browser Tarot utilizes the Rider-Waite tarot deck published in 1910 by the Rider Company, illustrated by Pamela Colman Smith under the direction of mystic A.E. Waite. \n\nFate Browser does not use, collect or share any of your data."
         android:id="@+id/textView"
         android:maxWidth="260dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="43dp" />
+        android:layout_marginTop="0dp"
+        android:textColor="#666666" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/fatebrowser_deck"
-        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="\u00A92014 Crunchy Pencil Design"
+        android:id="@+id/textView2"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/textView" />
+        android:layout_marginBottom="10dp"
+        android:textColor="#999999" />
+
+
+
+
 </RelativeLayout>
