@@ -13,6 +13,8 @@ import android.text.method.ScrollingMovementMethod;
 import android.graphics.drawable.Drawable;
 import android.content.Context;
 import android.widget.Toast;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 
 
@@ -20,7 +22,7 @@ import android.widget.Toast;
  * Created by davidcahill on 11/12/14.
  */
 public class PickCard extends Activity{
-
+    boolean carddown = false;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -65,14 +67,32 @@ public class PickCard extends Activity{
             Deck.count++;
 
             cardimg.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View v){
-                    cardimg.setVisibility(View.INVISIBLE);
-                    if(Deck.soundon) {
-                        MediaPlayer mp1 = MediaPlayer.create(PickCard.this, R.raw.place);
-                        mp1.start();
+
+                    ImageView moveitdown = (ImageView) findViewById(R.id.pickacardView);
+                    Context context1 = getApplicationContext();
+                    Animation cardSlideAnimation1 = AnimationUtils.loadAnimation(context1, R.anim.move_down);
+                    Animation cardSlideAnimation2 = AnimationUtils.loadAnimation(context1, R.anim.move_up);
+                    MediaPlayer mp1 = MediaPlayer.create(PickCard.this, R.raw.place);
+
+                    if(carddown){
+                        moveitdown.startAnimation(cardSlideAnimation2);
+                        cardSlideAnimation2.setFillAfter(true);
+                        carddown = false;
+                        if (Deck.soundon) {
+                            mp1.start();
+                        }
+                    } else {
+                        //cardimg.setVisibility(View.INVISIBLE);
+                        moveitdown.startAnimation(cardSlideAnimation1);
+                        cardSlideAnimation1.setFillAfter(true);
+                        carddown = true;
+                        if (Deck.soundon) {
+                            mp1.start();
+                        }
                     }
-                    //getActionBar().show();
                 }
             });
 
