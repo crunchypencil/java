@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:textAppearanceSmall"
-        android:text="I made Fate Browser because I wanted a pocket deck of tarot cards and all that I could find contained adware or malware, and most of the apps didn't take advantage of the reversed meanings of inverted cards. \n\nFate Browser Tarot utilizes the Rider-Waite tarot deck published in 1910 by the Rider Company, illustrated by Pamela Colman Smith under the direction of mystic A.E. Waite. \n\nFate Browser does not use, collect or share any of your data."
+        android:text="I created Fate Browser because I wanted a mobile deck of tarot cards that offered a more authentic experience. Fate Browser includes inverted cards and inverse meanings. \n\nFate Browser Tarot utilizes the Rider-Waite tarot deck published in 1910 by the Rider Company, illustrated by Pamela Colman Smith under the direction of mystic A.E. Waite. \n\nFate Browser does not use, collect or share any of your data and contains no malware or adware."
         android:id="@+id/textView"
         android:maxWidth="260dp"
         android:layout_below="@+id/imageView"

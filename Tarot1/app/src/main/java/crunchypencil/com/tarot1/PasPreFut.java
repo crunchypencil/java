@@ -2,6 +2,7 @@ package crunchypencil.com.tarot1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,29 +16,72 @@ import android.content.Context;
 /**
  * Created by davidcahill on 11/12/14.
  */
-public class ShuffleDeck extends Activity {
+public class PasPreFut extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shuffle);
+        setContentView(R.layout.activity_pasprefut);
 
-        Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-        Deck.count = 0;
+        if(Deck.soundon) {
+            MediaPlayer mp = MediaPlayer.create(PasPreFut.this, R.raw.shuffling);
+            mp.start();
+        }
 
-        ImageView shufimg = (ImageView) findViewById(R.id.shuffledeckView);
+        //Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+        //Deck.count = 0;
 
-        shufimg.setOnClickListener(new View.OnClickListener(){
+        /*Object[] cardarr = new Object[3];
+        cardarr[0] = new CardGenerate(Deck.tempdeck[0], true);
+        cardarr[0].cardImage()
+        cardarr[1] = new CardGenerate(Deck.tempdeck[1], true);
+        cardarr[2] = new CardGenerate(Deck.tempdeck[2], true);
+
+
+
+        ImageView ppfpast = (ImageView) findViewById(R.id.paspresfutImage1);
+        ImageView ppfpres = (ImageView) findViewById(R.id.paspresfutImage2);
+        ImageView ppffutu = (ImageView) findViewById(R.id.paspresfutImage3);
+
+        String uri = "@drawable/"+current.cardImage;
+        int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+        final ImageView cardimg = (ImageView)findViewById(R.id.pickacardView);
+        Drawable res = getResources().getDrawable(imageResource);
+        cardimg.setImageDrawable(res);*/
+
+
+
+        ImageView img1 = (ImageView) findViewById(R.id.paspresfutImage1);
+        //img1.setImageResource(R.drawable.fatebrowser_deck);
+        img1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(ShuffleDeck.this, PickCard.class));
+                Deck.count = 0;
+                startActivity(new Intent(PasPreFut.this, PickCard.class));
             }
         });
 
-        if(Deck.soundon) {
-            MediaPlayer mp = MediaPlayer.create(ShuffleDeck.this, R.raw.shuffling);
-            mp.start();
-        }
+        ImageView img2 = (ImageView) findViewById(R.id.paspresfutImage2);
+        //img1.setImageResource(R.drawable.fatebrowser_deck);
+        img2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Deck.count = 1;
+                startActivity(new Intent(PasPreFut.this, PickCard.class));
+            }
+        });
+
+        ImageView img3 = (ImageView) findViewById(R.id.paspresfutImage3);
+        //img1.setImageResource(R.drawable.fatebrowser_deck);
+        img3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Deck.count = 2;
+                startActivity(new Intent(PasPreFut.this, PickCard.class));
+            }
+        });
+
+
 
     }
 
@@ -87,7 +131,7 @@ public class ShuffleDeck extends Activity {
                     toast.show();
                 } else {
                     Deck.soundon = true;
-                    MediaPlayer mp2 = MediaPlayer.create(ShuffleDeck.this, R.raw.place);
+                    MediaPlayer mp2 = MediaPlayer.create(PasPreFut.this, R.raw.place);
                     mp2.start();
                     Toast toast = Toast.makeText(context, "Sound ON", duration);
                     toast.show();

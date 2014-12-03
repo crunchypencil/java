@@ -58,6 +58,10 @@ public class Info extends Activity {
                 Intent intent_info = new Intent(this, Info.class);
                 this.startActivity(intent_info);
                 break;
+            case R.id.action_ppf:
+                Intent intent_ppf = new Intent(this, PasPreFut.class);
+                this.startActivity(intent_ppf);
+                break;
             case R.id.action_sound:
                 if(Deck.soundon){
                     Deck.soundon = false;
