@@ -24,7 +24,20 @@ public class Deck {
         }
         return numbers;
     }
-    static String[][] tarotdeck = new String[][] {
+    static String[][] tarotdeck = new String[78][];
+
+    public static String[][] addFlip(String[][] decktoadd){
+        for(int i=0;i<78;i++){
+            double invran = Math.random();
+            if (invran <= .5) {
+                decktoadd[i][1] = "false";
+            } else {
+                decktoadd[i][1] = "true";
+            }
+        }
+        return decktoadd;
+    }
+    static String[][] deck = new String[][] {
             {    "0 - The Fool",
                     "maj00",
                     "maj00",

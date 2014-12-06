@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+        Deck.tarotdeck = Deck.addFlip(Deck.deck);
         Deck.count = 0;
 
         ImageView img = (ImageView) findViewById(R.id.mainlogoImage);

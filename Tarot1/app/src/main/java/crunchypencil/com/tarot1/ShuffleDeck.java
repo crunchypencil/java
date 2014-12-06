@@ -23,6 +23,7 @@ public class ShuffleDeck extends Activity {
         setContentView(R.layout.activity_shuffle);
 
         Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+        Deck.tarotdeck = Deck.addFlip(Deck.deck);
         Deck.count = 0;
 
         ImageView shufimg = (ImageView) findViewById(R.id.shuffledeckView);
@@ -38,6 +39,11 @@ public class ShuffleDeck extends Activity {
             MediaPlayer mp = MediaPlayer.create(ShuffleDeck.this, R.raw.shuffling);
             mp.start();
         }
+
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, "Shuffle", duration);
+        toast.show();
 
     }
 

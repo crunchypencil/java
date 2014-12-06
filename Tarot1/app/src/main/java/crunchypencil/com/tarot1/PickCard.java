@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
-import android.text.method.ScrollingMovementMethod;
 import android.graphics.drawable.Drawable;
 import android.content.Context;
 import android.widget.Toast;
@@ -28,7 +27,7 @@ public class PickCard extends Activity{
         super.onCreate(savedInstanceState);
 
 
-        int orient = getResources().getConfiguration().orientation;
+        //int orient = getResources().getConfiguration().orientation;
         //if (orient==2){
             //getActionBar().hide();  //hide if orientation is horizontal
         //}
@@ -37,8 +36,8 @@ public class PickCard extends Activity{
 
         if(Deck.count==Deck.tempdeck.length){
 
-            TextView cardNameValue = (TextView) findViewById(R.id.pickCard1);
-            cardNameValue.setText("empty");
+            Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+            this.startActivity(intent_shuff);
 
         } else {
 
@@ -52,7 +51,7 @@ public class PickCard extends Activity{
             cardimg.setImageDrawable(res);
 
 
-            if(!CardGenerate.cardUp) {  // turn image upside down if !cardUp
+            if(current.cardFlip.equals("false")) {  // turn image upside down if !cardUp
                 cardimg.setScaleX(-1);
                 cardimg.setScaleY(-1);
             }
@@ -96,11 +95,11 @@ public class PickCard extends Activity{
                 }
             });
 
-            TextView tv1 = (TextView) findViewById(R.id.pickCard3);
-            tv1.setMovementMethod(new ScrollingMovementMethod());
+            //TextView tv1 = (TextView) findViewById(R.id.pickCard3);
+            //tv1.setMovementMethod(new ScrollingMovementMethod());
 
-            TextView tv2 = (TextView) findViewById(R.id.pickCard5);
-            tv2.setMovementMethod(new ScrollingMovementMethod());
+            //TextView tv2 = (TextView) findViewById(R.id.pickCard5);
+            //tv2.setMovementMethod(new ScrollingMovementMethod());
 
             if(Deck.soundon) {
                 MediaPlayer mp2 = MediaPlayer.create(PickCard.this, R.raw.turnover);
@@ -126,10 +125,12 @@ public class PickCard extends Activity{
         switch(item.getItemId()) {
             case R.id.action_shuffle:
                 Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
+                finish();
                 this.startActivity(intent_shuffle);
                 break;
             case R.id.action_shuff:
                 Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+                finish();
                 this.startActivity(intent_shuff);
                 break;
             case R.id.action_pick:
@@ -148,6 +149,10 @@ public class PickCard extends Activity{
                 break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, PasPreFut.class);
+                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+                Deck.tarotdeck = Deck.addFlip(Deck.deck);
+                Deck.count = 0;
+                finish();
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:
