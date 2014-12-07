@@ -44,7 +44,6 @@ public class PickCard extends Activity{
             CardGenerate current = new CardGenerate(Deck.tempdeck[Deck.count], true);
 
             String uri = "@drawable/"+current.cardImage;
-
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             final ImageView cardimg = (ImageView)findViewById(R.id.pickacardView);
             Drawable res = getResources().getDrawable(imageResource);

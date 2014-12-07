@@ -2,21 +2,23 @@ package crunchypencil.com.tarot1;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
-import android.media.MediaPlayer;
-import android.widget.Toast;
+import android.view.View;
+import android.graphics.drawable.Drawable;
 import android.content.Context;
+import android.widget.Toast;
 
 
 /**
  * Created by davidcahill on 11/12/14.
  */
 public class PasPreFut extends Activity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -28,55 +30,62 @@ public class PasPreFut extends Activity {
             mp.start();
         }
 
-        //Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-        //Deck.count = 0;
+        final ImageView img0 = (ImageView) findViewById(R.id.paspresfutImage1);
+        final ImageView img1 = (ImageView) findViewById(R.id.paspresfutImage2);
+        final ImageView img2 = (ImageView) findViewById(R.id.paspresfutImage3);
 
-        /*Object[] cardarr = new Object[3];
-        cardarr[0] = new CardGenerate(Deck.tempdeck[0], true);
-        cardarr[0].cardImage()
-        cardarr[1] = new CardGenerate(Deck.tempdeck[1], true);
-        cardarr[2] = new CardGenerate(Deck.tempdeck[2], true);
+        final String img0pick = Deck.tarotdeck[Deck.tempdeck[0]][2];
+        final String img1pick = Deck.tarotdeck[Deck.tempdeck[1]][2];
+        final String img2pick = Deck.tarotdeck[Deck.tempdeck[2]][2];
+
+        img0.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Deck.count = 0;
+                String uri = "@drawable/"+img0pick;
+                int imageResource0 = getResources().getIdentifier(uri, null, getPackageName());
+                Drawable res0 = getResources().getDrawable(imageResource0);
+                img0.setImageDrawable(res0);
+                if(Deck.tarotdeck[Deck.tempdeck[0]][1].equals("false")) {  // turn image upside down if !cardUp
+                    img0.setScaleX(-1);
+                    img0.setScaleY(-1);
+                }
+                startActivity(new Intent(PasPreFut.this, PickCard.class));
+            }
+        });
 
 
-
-        ImageView ppfpast = (ImageView) findViewById(R.id.paspresfutImage1);
-        ImageView ppfpres = (ImageView) findViewById(R.id.paspresfutImage2);
-        ImageView ppffutu = (ImageView) findViewById(R.id.paspresfutImage3);
-
-        String uri = "@drawable/"+current.cardImage;
-        int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-        final ImageView cardimg = (ImageView)findViewById(R.id.pickacardView);
-        Drawable res = getResources().getDrawable(imageResource);
-        cardimg.setImageDrawable(res);*/
-
-
-
-        ImageView img1 = (ImageView) findViewById(R.id.paspresfutImage1);
         //img1.setImageResource(R.drawable.fatebrowser_deck);
         img1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Deck.count = 0;
+                Deck.count = 1;
+                String uri = "@drawable/"+img1pick;
+                int imageResource1 = getResources().getIdentifier(uri, null, getPackageName());
+                Drawable res1 = getResources().getDrawable(imageResource1);
+                img1.setImageDrawable(res1);
+                if(Deck.tarotdeck[Deck.tempdeck[1]][1].equals("false")) {  // turn image upside down if !cardUp
+                    img1.setScaleX(-1);
+                    img1.setScaleY(-1);
+                }
                 startActivity(new Intent(PasPreFut.this, PickCard.class));
             }
         });
 
-        ImageView img2 = (ImageView) findViewById(R.id.paspresfutImage2);
+
         //img1.setImageResource(R.drawable.fatebrowser_deck);
         img2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Deck.count = 1;
-                startActivity(new Intent(PasPreFut.this, PickCard.class));
-            }
-        });
-
-        ImageView img3 = (ImageView) findViewById(R.id.paspresfutImage3);
-        //img1.setImageResource(R.drawable.fatebrowser_deck);
-        img3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
                 Deck.count = 2;
+                String uri = "@drawable/"+img2pick;
+                int imageResource2 = getResources().getIdentifier(uri, null, getPackageName());
+                Drawable res2 = getResources().getDrawable(imageResource2);
+                img2.setImageDrawable(res2);
+                if(Deck.tarotdeck[Deck.tempdeck[2]][1].equals("false")) {  // turn image upside down if !cardUp
+                    img2.setScaleX(-1);
+                    img2.setScaleY(-1);
+                }
                 startActivity(new Intent(PasPreFut.this, PickCard.class));
             }
         });
