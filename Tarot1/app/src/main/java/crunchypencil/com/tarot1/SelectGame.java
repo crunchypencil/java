@@ -6,17 +6,46 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.view.View.OnClickListener;
 import android.content.Context;
 import android.widget.Toast;
+import android.widget.Button;
 
 
+public class SelectGame extends Activity {
 
-public class Info extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.activity_select);
+
+        Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+        Deck.tarotdeck = Deck.addFlip(Deck.deck);
+        Deck.count = 0;
+
+        final Button b1 = (Button) findViewById(R.id.b1);
+        b1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            }
+        });
+
+        final Button b2 = (Button) findViewById(R.id.b2);
+        b2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            }
+        });
+
+        final Button b3 = (Button) findViewById(R.id.b3);
+        b3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            }
+        });
 
 
 
@@ -48,7 +77,6 @@ public class Info extends Activity {
                 break;
             case R.id.action_randshuff:
                 Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
-                finish();
                 this.startActivity(intent_randshuff);
                 break;
             case R.id.action_pick:
@@ -65,9 +93,6 @@ public class Info extends Activity {
                 break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, PasPreFut.class);
-                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-                Deck.tarotdeck = Deck.addFlip(Deck.deck);
-                Deck.count = 0;
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:
@@ -77,7 +102,7 @@ public class Info extends Activity {
                     toast.show();
                 } else {
                     Deck.soundon = true;
-                    MediaPlayer mp2 = MediaPlayer.create(Info.this, R.raw.place);
+                    MediaPlayer mp2 = MediaPlayer.create(SelectGame.this, R.raw.place);
                     mp2.start();
                     Toast toast = Toast.makeText(context, "Sound ON", duration);
                     toast.show();

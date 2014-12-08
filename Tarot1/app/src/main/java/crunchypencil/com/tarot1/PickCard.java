@@ -44,6 +44,7 @@ public class PickCard extends Activity{
             CardGenerate current = new CardGenerate(Deck.tempdeck[Deck.count], true);
 
             String uri = "@drawable/"+current.cardImage;
+
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             final ImageView cardimg = (ImageView)findViewById(R.id.pickacardView);
             Drawable res = getResources().getDrawable(imageResource);
@@ -122,15 +123,15 @@ public class PickCard extends Activity{
         int duration = Toast.LENGTH_SHORT;
 
         switch(item.getItemId()) {
-            case R.id.action_shuffle:
-                Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
-                finish();
-                this.startActivity(intent_shuffle);
-                break;
             case R.id.action_shuff:
                 Intent intent_shuff = new Intent(this, ShuffleDeck.class);
                 finish();
                 this.startActivity(intent_shuff);
+                break;
+            case R.id.action_randshuff:
+                Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
+                finish();
+                this.startActivity(intent_randshuff);
                 break;
             case R.id.action_pick:
                 Intent intent_pick = new Intent(this, PickCard.class);
@@ -144,6 +145,7 @@ public class PickCard extends Activity{
                 break;
             case R.id.action_info:
                 Intent intent_info = new Intent(this, Info.class);
+                finish();
                 this.startActivity(intent_info);
                 break;
             case R.id.action_ppf:

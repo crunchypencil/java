@@ -30,6 +30,11 @@ public class PasPreFut extends Activity {
             mp.start();
         }
 
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, "Shuffle", duration);
+        toast.show();
+
         final ImageView img0 = (ImageView) findViewById(R.id.paspresfutImage1);
         final ImageView img1 = (ImageView) findViewById(R.id.paspresfutImage2);
         final ImageView img2 = (ImageView) findViewById(R.id.paspresfutImage3);
@@ -54,8 +59,6 @@ public class PasPreFut extends Activity {
             }
         });
 
-
-        //img1.setImageResource(R.drawable.fatebrowser_deck);
         img1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -68,12 +71,13 @@ public class PasPreFut extends Activity {
                     img1.setScaleX(-1);
                     img1.setScaleY(-1);
                 }
+                //Intent i = new Intent(getApplicationContext(), NewActivity.class);
+                //i.putExtra("new_variable_name","value");
+                //startActivity(i);
                 startActivity(new Intent(PasPreFut.this, PickCard.class));
             }
         });
 
-
-        //img1.setImageResource(R.drawable.fatebrowser_deck);
         img2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -98,7 +102,7 @@ public class PasPreFut extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_pasprefut, menu);
         return true;
     }
 
@@ -109,24 +113,30 @@ public class PasPreFut extends Activity {
         int duration = Toast.LENGTH_SHORT;
 
         switch(item.getItemId()) {
-            case R.id.action_shuffle:
-                Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
-                this.startActivity(intent_shuffle);
+            case R.id.action_reshuffle:
+                Intent intent_reshuffle = new Intent(this, PasPreFut.class);
+                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+                Deck.tarotdeck = Deck.addFlip(Deck.deck);
+                Deck.count = 0;
+                finish();
+                this.startActivity(intent_reshuffle);
                 break;
             case R.id.action_shuff:
-                Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+                Intent intent_shuff = new Intent(this, PasPreFut.class);
+                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+                Deck.tarotdeck = Deck.addFlip(Deck.deck);
+                Deck.count = 0;
+                finish();
                 this.startActivity(intent_shuff);
                 break;
-            case R.id.action_pick:
-                Intent intent_pick = new Intent(this, PickCard.class);
-                this.startActivity(intent_pick);
-                break;
-            case R.id.action_pic:
-                Intent intent_pic = new Intent(this, PickCard.class);
-                this.startActivity(intent_pic);
+            case R.id.action_randshuff:
+                Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
+                finish();
+                this.startActivity(intent_randshuff);
                 break;
             case R.id.action_info:
                 Intent intent_info = new Intent(this, Info.class);
+                finish();
                 this.startActivity(intent_info);
                 break;
             case R.id.action_ppf:
@@ -134,6 +144,7 @@ public class PasPreFut extends Activity {
                 Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
                 Deck.tarotdeck = Deck.addFlip(Deck.deck);
                 Deck.count = 0;
+                finish();
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:

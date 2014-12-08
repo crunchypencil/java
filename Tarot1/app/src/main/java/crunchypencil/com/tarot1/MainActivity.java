@@ -25,12 +25,11 @@ public class MainActivity extends Activity {
         Deck.count = 0;
 
         ImageView img = (ImageView) findViewById(R.id.mainlogoImage);
-        img.setImageResource(R.drawable.fatebrowser_deck);
 
         img.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, ShuffleDeck.class));
+                startActivity(new Intent(MainActivity.this, SelectGame.class));
             }
         });
 
@@ -60,6 +59,10 @@ public class MainActivity extends Activity {
             case R.id.action_shuff:
                 Intent intent_shuff = new Intent(this, ShuffleDeck.class);
                 this.startActivity(intent_shuff);
+                break;
+            case R.id.action_randshuff:
+                Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
+                this.startActivity(intent_randshuff);
                 break;
             case R.id.action_pick:
                 Intent intent_pick = new Intent(this, PickCard.class);

@@ -22,13 +22,23 @@
         android:showAsAction="never"
         android:title="@string/action_sound"/>
 
-    <item android:id="@+id/action_randshuff"
+    <item android:id="@+id/action_pick"
         android:orderInCategory="300"
+        android:showAsAction="never"
+        android:title="@string/action_pick"/>
+
+    <item android:id="@+id/action_shuffle"
+        android:orderInCategory="400"
+        android:showAsAction="never"
+        android:title="@string/action_shuffle"/>
+
+    <item android:id="@+id/action_randshuff"
+        android:orderInCategory="500"
         android:showAsAction="never"
         android:title="@string/action_randshuff"/>
 
     <item android:id="@+id/action_ppf"
-        android:orderInCategory="400"
+        android:orderInCategory="600"
         android:showAsAction="never"
         android:title="@string/action_ppf"/>
 

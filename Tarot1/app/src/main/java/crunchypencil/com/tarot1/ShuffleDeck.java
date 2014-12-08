@@ -31,6 +31,7 @@ public class ShuffleDeck extends Activity {
         shufimg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                finish();
                 startActivity(new Intent(ShuffleDeck.this, PickCard.class));
             }
         });
@@ -64,26 +65,37 @@ public class ShuffleDeck extends Activity {
         switch(item.getItemId()) {
             case R.id.action_shuffle:
                 Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
+                finish();
                 this.startActivity(intent_shuffle);
                 break;
             case R.id.action_shuff:
                 Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+                finish();
                 this.startActivity(intent_shuff);
+                break;
+            case R.id.action_randshuff:
+                Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
+                finish();
+                this.startActivity(intent_randshuff);
                 break;
             case R.id.action_pick:
                 Intent intent_pick = new Intent(this, PickCard.class);
+                finish();
                 this.startActivity(intent_pick);
                 break;
             case R.id.action_pic:
                 Intent intent_pic = new Intent(this, PickCard.class);
+                finish();
                 this.startActivity(intent_pic);
                 break;
             case R.id.action_info:
                 Intent intent_info = new Intent(this, Info.class);
+                finish();
                 this.startActivity(intent_info);
                 break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, PasPreFut.class);
+                finish();
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:
