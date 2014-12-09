@@ -30,6 +30,7 @@ public class SelectGame extends Activity {
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
+                //startActivity(new Intent(SelectGame.this, ShuffleDeck.class));
             }
         });
 
@@ -37,6 +38,7 @@ public class SelectGame extends Activity {
         b2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
+                startActivity(new Intent(SelectGame.this, PasPreFut.class));
             }
         });
 
@@ -44,6 +46,7 @@ public class SelectGame extends Activity {
         b3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
+                startActivity(new Intent(SelectGame.this, ShuffleDeck.class));
             }
         });
 

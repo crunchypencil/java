@@ -112,7 +112,7 @@ public class PickCard extends Activity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_rand, menu);
         return true;
     }
 
@@ -123,6 +123,11 @@ public class PickCard extends Activity{
         int duration = Toast.LENGTH_SHORT;
 
         switch(item.getItemId()) {
+            case R.id.action_shuffle:
+                Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
+                finish();
+                this.startActivity(intent_shuffle);
+                break;
             case R.id.action_shuff:
                 Intent intent_shuff = new Intent(this, ShuffleDeck.class);
                 finish();

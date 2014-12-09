@@ -113,7 +113,7 @@ public class PasPreFut extends Activity {
         int duration = Toast.LENGTH_SHORT;
 
         switch(item.getItemId()) {
-            case R.id.action_reshuffle:
+            case R.id.action_shuffle:
                 Intent intent_reshuffle = new Intent(this, PasPreFut.class);
                 Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
                 Deck.tarotdeck = Deck.addFlip(Deck.deck);

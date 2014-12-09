@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
 
 
-    <item android:id="@+id/action_shuff"
+    <!--<item android:id="@+id/action_shuff"
         android:icon="@drawable/ic_action_deck"
         android:title="@string/action_shuffle"
         android:showAsAction="ifRoom" />
@@ -10,7 +10,7 @@
     <item android:id="@+id/action_pic"
         android:icon="@drawable/ic_action_next"
         android:title="@string/action_pick"
-        android:showAsAction="ifRoom" />
+        android:showAsAction="ifRoom" />-->
 
     <item android:id="@+id/action_info"
         android:title="@string/action_info"
@@ -22,15 +22,20 @@
         android:showAsAction="never"
         android:title="@string/action_sound"/>
 
-    <item android:id="@+id/action_randshuff"
+    <item android:id="@+id/action_ccr"
         android:orderInCategory="300"
         android:showAsAction="never"
-        android:title="@string/action_randshuff"/>
+        android:title="@string/action_ccr"/>
 
     <item android:id="@+id/action_ppf"
         android:orderInCategory="400"
         android:showAsAction="never"
         android:title="@string/action_ppf"/>
+
+    <item android:id="@+id/action_randshuff"
+        android:orderInCategory="500"
+        android:showAsAction="never"
+        android:title="@string/action_randshuff"/>
 
 
 

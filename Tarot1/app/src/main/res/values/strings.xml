@@ -2,11 +2,18 @@
 <resources>
 
     <string name="app_name">Fate Browser</string>
+    <string name="app_cp">\u00A92014 Crunchy Pencil SoftWorks</string>
     <string name="action_home">Home</string>
     <string name="action_info">Info</string>
     <string name="action_shuffle">Shuffle the deck</string>
+    <string name="action_reshuffle">Reshuffle the deck</string>
     <string name="action_pick">Draw a card</string>
-    <string name="action_sound">Sound on/off</string>
+    <string name="action_sound">Sound ON/OFF</string>
     <string name="action_order">Ordered deck</string>
+    <string name="action_ppf">Past/Present/Future</string>
+    <string name="action_randshuff">Random Card</string>
+    <string name="action_ccr">Celtic Cross Layout</string>
+
+
 
 </resources>
