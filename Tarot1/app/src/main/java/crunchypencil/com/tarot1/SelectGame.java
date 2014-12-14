@@ -38,6 +38,9 @@ public class SelectGame extends Activity {
         b2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
+                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+                Deck.tarotdeck = Deck.addFlip(Deck.deck);
+                Deck.count = 0;
                 startActivity(new Intent(SelectGame.this, PasPreFut.class));
             }
         });
@@ -96,6 +99,9 @@ public class SelectGame extends Activity {
                 break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, PasPreFut.class);
+                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+                Deck.tarotdeck = Deck.addFlip(Deck.deck);
+                Deck.count = 0;
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:

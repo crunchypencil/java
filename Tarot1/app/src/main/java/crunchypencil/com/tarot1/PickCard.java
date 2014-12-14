@@ -37,6 +37,7 @@ public class PickCard extends Activity{
         if(Deck.count==Deck.tempdeck.length){
 
             Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+            finish();
             this.startActivity(intent_shuff);
 
         } else {
@@ -155,10 +156,10 @@ public class PickCard extends Activity{
                 break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, PasPreFut.class);
+                finish();
                 Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
                 Deck.tarotdeck = Deck.addFlip(Deck.deck);
                 Deck.count = 0;
-                finish();
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:
