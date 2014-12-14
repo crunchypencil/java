@@ -155,11 +155,8 @@ public class PickCard extends Activity{
                 this.startActivity(intent_info);
                 break;
             case R.id.action_ppf:
-                Intent intent_ppf = new Intent(this, PasPreFut.class);
+                Intent intent_ppf = new Intent(this, ShufflePpf.class);
                 finish();
-                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-                Deck.tarotdeck = Deck.addFlip(Deck.deck);
-                Deck.count = 0;
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:

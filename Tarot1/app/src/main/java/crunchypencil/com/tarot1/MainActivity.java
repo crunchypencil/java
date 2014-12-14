@@ -29,10 +29,6 @@ public class MainActivity extends Activity {
         img.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View v){
-                if(Deck.soundon) {
-                    MediaPlayer mp4 = MediaPlayer.create(MainActivity.this, R.raw.turnover);
-                    mp4.start();
-                }
                 startActivity(new Intent(MainActivity.this, SelectGame.class));
             }
         });
@@ -81,7 +77,7 @@ public class MainActivity extends Activity {
                 this.startActivity(intent_info);
                 break;
             case R.id.action_ppf:
-                Intent intent_ppf = new Intent(this, PasPreFut.class);
+                Intent intent_ppf = new Intent(this, ShufflePpf.class);
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:

@@ -31,7 +31,13 @@
         <activity android:name="crunchypencil.com.tarot1.PasPreFut"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
+        <activity android:name="crunchypencil.com.tarot1.PickPpf"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
         <activity android:name="crunchypencil.com.tarot1.SelectGame"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity android:name="crunchypencil.com.tarot1.ShufflePpf"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
     </application>

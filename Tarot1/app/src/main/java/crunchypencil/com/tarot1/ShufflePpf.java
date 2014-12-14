@@ -15,7 +15,7 @@ import android.content.Context;
 /**
  * Created by davidcahill on 11/12/14.
  */
-public class ShuffleDeck extends Activity {
+public class ShufflePpf extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -28,18 +28,22 @@ public class ShuffleDeck extends Activity {
 
         ImageView shufimg = (ImageView) findViewById(R.id.shuffledeckView);
 
+
+        if(Deck.soundon) {
+            MediaPlayer mp = MediaPlayer.create(ShufflePpf.this, R.raw.shuffling);
+            mp.start();
+        }
+
+
         shufimg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 finish();
-                startActivity(new Intent(ShuffleDeck.this, PickCard.class));
+                startActivity(new Intent(ShufflePpf.this, PasPreFut.class));
             }
         });
 
-        if(Deck.soundon) {
-            MediaPlayer mp = MediaPlayer.create(ShuffleDeck.this, R.raw.shuffling);
-            mp.start();
-        }
+
 
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
@@ -52,7 +56,7 @@ public class ShuffleDeck extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_rand, menu);
+        getMenuInflater().inflate(R.menu.menu_pasprefut, menu);
         return true;
     }
 
@@ -64,12 +68,12 @@ public class ShuffleDeck extends Activity {
 
         switch(item.getItemId()) {
             case R.id.action_shuffle:
-                Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
+                Intent intent_shuffle = new Intent(this, ShufflePpf.class);
                 finish();
                 this.startActivity(intent_shuffle);
                 break;
             case R.id.action_shuff:
-                Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+                Intent intent_shuff = new Intent(this, ShufflePpf.class);
                 finish();
                 this.startActivity(intent_shuff);
                 break;
@@ -105,7 +109,7 @@ public class ShuffleDeck extends Activity {
                     toast.show();
                 } else {
                     Deck.soundon = true;
-                    MediaPlayer mp2 = MediaPlayer.create(ShuffleDeck.this, R.raw.place);
+                    MediaPlayer mp2 = MediaPlayer.create(ShufflePpf.this, R.raw.place);
                     mp2.start();
                     Toast toast = Toast.makeText(context, "Sound ON", duration);
                     toast.show();

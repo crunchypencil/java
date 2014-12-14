@@ -26,14 +26,11 @@ public class PasPreFut extends Activity {
         setContentView(R.layout.activity_pasprefut);
 
         if(Deck.soundon) {
-            MediaPlayer mp = MediaPlayer.create(PasPreFut.this, R.raw.shuffling);
-            mp.start();
+            MediaPlayer mp2 = MediaPlayer.create(PasPreFut.this, R.raw.place);
+            mp2.start();
         }
 
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, "Shuffle", duration);
-        toast.show();
+
 
         final ImageView img0 = (ImageView) findViewById(R.id.paspresfutImage1);
         final ImageView img1 = (ImageView) findViewById(R.id.paspresfutImage2);
@@ -114,18 +111,12 @@ public class PasPreFut extends Activity {
 
         switch(item.getItemId()) {
             case R.id.action_shuffle:
-                Intent intent_reshuffle = new Intent(this, PasPreFut.class);
-                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-                Deck.tarotdeck = Deck.addFlip(Deck.deck);
-                Deck.count = 0;
+                Intent intent_reshuffle = new Intent(this, ShufflePpf.class);
                 finish();
                 this.startActivity(intent_reshuffle);
                 break;
             case R.id.action_shuff:
-                Intent intent_shuff = new Intent(this, PasPreFut.class);
-                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-                Deck.tarotdeck = Deck.addFlip(Deck.deck);
-                Deck.count = 0;
+                Intent intent_shuff = new Intent(this, ShufflePpf.class);
                 finish();
                 this.startActivity(intent_shuff);
                 break;
@@ -140,10 +131,7 @@ public class PasPreFut extends Activity {
                 this.startActivity(intent_info);
                 break;
             case R.id.action_ppf:
-                Intent intent_ppf = new Intent(this, PasPreFut.class);
-                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-                Deck.tarotdeck = Deck.addFlip(Deck.deck);
-                Deck.count = 0;
+                Intent intent_ppf = new Intent(this, ShufflePpf.class);
                 finish();
                 this.startActivity(intent_ppf);
                 break;

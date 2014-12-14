@@ -125,19 +125,19 @@ public class PickPpf extends Activity{
 
         switch(item.getItemId()) {
             case R.id.action_shuffle:
-                Intent intent_shuffle = new Intent(this, PasPreFut.class);
+                Intent intent_shuffle = new Intent(this, ShufflePpf.class);
+                Intent intent1 = new Intent(getApplicationContext(), SelectGame.class);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent1); // dump everything on top of SelectGame to remove back access
                 finish();
-                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-                Deck.tarotdeck = Deck.addFlip(Deck.deck);
-                Deck.count = 0;
                 this.startActivity(intent_shuffle);
                 break;
             case R.id.action_shuff:
-                Intent intent_shuff = new Intent(this, PasPreFut.class);
+                Intent intent_shuff = new Intent(this, ShufflePpf.class);
+                Intent intent2 = new Intent(getApplicationContext(), SelectGame.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent2); // dump everything on top of SelectGame to remove back access
                 finish();
-                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-                Deck.tarotdeck = Deck.addFlip(Deck.deck);
-                Deck.count = 0;
                 this.startActivity(intent_shuff);
                 break;
             case R.id.action_randshuff:
@@ -161,11 +161,11 @@ public class PickPpf extends Activity{
                 this.startActivity(intent_info);
                 break;
             case R.id.action_ppf:
-                Intent intent_ppf = new Intent(this, PasPreFut.class);
+                Intent intent_ppf = new Intent(this, ShufflePpf.class);
+                Intent intent3 = new Intent(getApplicationContext(), SelectGame.class);
+                intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent3); // dump everything on top of SelectGame to remove back access
                 finish();
-                Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
-                Deck.tarotdeck = Deck.addFlip(Deck.deck);
-                Deck.count = 0;
                 this.startActivity(intent_ppf);
                 break;
             case R.id.action_sound:
