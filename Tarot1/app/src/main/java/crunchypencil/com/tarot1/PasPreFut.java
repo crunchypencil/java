@@ -55,7 +55,7 @@ public class PasPreFut extends Activity {
                     img0.setScaleX(-1);
                     img0.setScaleY(-1);
                 }
-                startActivity(new Intent(PasPreFut.this, PickCard.class));
+                startActivity(new Intent(PasPreFut.this, PickPpf.class));
             }
         });
 
@@ -74,7 +74,7 @@ public class PasPreFut extends Activity {
                 //Intent i = new Intent(getApplicationContext(), NewActivity.class);
                 //i.putExtra("new_variable_name","value");
                 //startActivity(i);
-                startActivity(new Intent(PasPreFut.this, PickCard.class));
+                startActivity(new Intent(PasPreFut.this, PickPpf.class));
             }
         });
 
@@ -90,7 +90,7 @@ public class PasPreFut extends Activity {
                     img2.setScaleX(-1);
                     img2.setScaleY(-1);
                 }
-                startActivity(new Intent(PasPreFut.this, PickCard.class));
+                startActivity(new Intent(PasPreFut.this, PickPpf.class));
             }
         });
 
