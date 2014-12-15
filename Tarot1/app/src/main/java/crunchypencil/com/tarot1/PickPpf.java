@@ -57,12 +57,16 @@ public class PickPpf extends Activity{
                 cardimg.setScaleY(-1);
             }
 
+            String CardContext = getIntent().getExtras().getString("context");
+
             TextView cardNameValue = (TextView) findViewById(R.id.pickCard1);
             cardNameValue.setText(current.cardName);
             TextView cardDescribeValue = (TextView) findViewById(R.id.pickCard3);
             cardDescribeValue.setText(current.cardDescribe);
             TextView cardMeaningValue = (TextView) findViewById(R.id.pickCard5);
             cardMeaningValue.setText(current.cardMeaning);
+            TextView cardContextValue = (TextView) findViewById(R.id.pickCard7);
+            cardContextValue.setText(CardContext);
 
             Deck.count++;
 

@@ -52,7 +52,10 @@ public class PasPreFut extends Activity {
                     img0.setScaleX(-1);
                     img0.setScaleY(-1);
                 }
-                startActivity(new Intent(PasPreFut.this, PickPpf.class));
+                Intent intent_1 = new Intent(PasPreFut.this, PickPpf.class);
+                intent_1.putExtra("context", "The Past.");
+                startActivity(intent_1);
+                //startActivity(new Intent(PasPreFut.this, PickPpf.class));
             }
         });
 
@@ -68,10 +71,10 @@ public class PasPreFut extends Activity {
                     img1.setScaleX(-1);
                     img1.setScaleY(-1);
                 }
-                //Intent i = new Intent(getApplicationContext(), NewActivity.class);
-                //i.putExtra("new_variable_name","value");
-                //startActivity(i);
-                startActivity(new Intent(PasPreFut.this, PickPpf.class));
+                Intent intent_2 = new Intent(PasPreFut.this, PickPpf.class);
+                intent_2.putExtra("context", "The Present.");
+                startActivity(intent_2);
+                //startActivity(new Intent(PasPreFut.this, PickPpf.class));
             }
         });
 
@@ -87,7 +90,11 @@ public class PasPreFut extends Activity {
                     img2.setScaleX(-1);
                     img2.setScaleY(-1);
                 }
-                startActivity(new Intent(PasPreFut.this, PickPpf.class));
+                Intent intent_3 = new Intent(PasPreFut.this, PickPpf.class);
+                intent_3.putExtra("context", "The Future.");
+                startActivity(intent_3);
+
+                //startActivity(new Intent(PasPreFut.this, PickPpf.class));
             }
         });
 

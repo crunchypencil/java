@@ -38,6 +38,10 @@ public class ShufflePpf extends Activity {
         shufimg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+
+                Intent intent1 = new Intent(getApplicationContext(), SelectGame.class);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent1); // dump everything on top of SelectGame to remove back access
                 finish();
                 startActivity(new Intent(ShufflePpf.this, PasPreFut.class));
             }

@@ -9,16 +9,16 @@
     android:background="#FFFFFF">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="0.3">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/paspresfutImage1"
-            android:src="@drawable/back"
+            android:src="@drawable/backlo"
             android:layout_alignParentTop="false"
             android:layout_alignParentLeft="false"
             android:layout_alignParentStart="false"
@@ -42,16 +42,16 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="0.3">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/paspresfutImage2"
-            android:src="@drawable/back"
+            android:src="@drawable/backlo"
             android:layout_alignParentTop="false"
             android:layout_alignParentLeft="false"
             android:layout_alignParentStart="false"
@@ -75,16 +75,16 @@
         </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="0.3">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/paspresfutImage3"
-            android:src="@drawable/back"
+            android:src="@drawable/backlo"
             android:layout_alignParentTop="false"
             android:layout_alignParentLeft="false"
             android:layout_alignParentStart="false"
