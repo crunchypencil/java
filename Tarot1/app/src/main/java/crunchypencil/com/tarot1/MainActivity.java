@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.view.View.OnClickListener;
 import android.content.Context;
 import android.widget.Toast;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 
 public class MainActivity extends Activity {
@@ -25,6 +27,9 @@ public class MainActivity extends Activity {
         Deck.count = 0;
 
         ImageView img = (ImageView) findViewById(R.id.mainlogoImage);
+        //ImageView myImageView= (ImageView)findViewById(R.id.myImageView);
+        Animation myFadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fadein);
+        img.startAnimation(myFadeInAnimation); //Set animation to your ImageView
 
         img.setOnClickListener(new OnClickListener(){
             @Override
@@ -56,10 +61,10 @@ public class MainActivity extends Activity {
                 Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
                 this.startActivity(intent_shuffle);
                 break;
-            case R.id.action_shuff:
-                Intent intent_shuff = new Intent(this, ShuffleDeck.class);
-                this.startActivity(intent_shuff);
-                break;
+//            case R.id.action_shuff:
+//                Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+//                this.startActivity(intent_shuff);
+//                break;
             case R.id.action_randshuff:
                 Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
                 this.startActivity(intent_randshuff);

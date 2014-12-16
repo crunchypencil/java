@@ -42,7 +42,7 @@ public class Deck {
                     "maj00",
                     "maj00",
                     "maj00",
-                    "With light step, a young man in garish vestments pauses at the brink of a precipice; he surveys the expanse of sky rather than the edge below which opens on the depth. It is as if angels were waiting to uphold him if he leapt from the height. His expression is of a dream. He has a rose in one hand and in the other a staff, suspending his possessions and a dog, as distracted as he is.",
+                    "With light step, a young man in garish clothing pauses at the edge of a precipice; he surveys the expanse of sky rather than the cliff below which opens on the depth. It is as if angels were waiting to uphold him if he leapt from the height. His expression is of a dream. He has a rose in one hand and in the other a staff, suspending his possessions and a dog, as distracted as he is.",
                     "Beginnings, innocence, spontaneity, a free spirit, folly, optimism, delirium. New possibilities but beware of foolishness.",
                     "Reversed: Negligence, naivety, recklessness, risk-taking, carelessness, apathy, vanity. Failure due to foolish behavior."
             },
@@ -50,7 +50,7 @@ public class Deck {
                     "maj01",
                     "maj01",
                     "maj01",
-                    "A youthful figure in a robe, with a look of confidence upholds a wand in front of a table in a garden. His other hand points to the ground. Above his head is the mysterious sign of infinity and his belt is a serpent biting its own tail. On the table in front of him are the symbols of the four suits, signifying the elements of natural life.",
+                    "A youthful figure in a robe, with a look of confidence holds a wand in front of a table. His other hand points to the ground. Above his head is a mysterious sign and his belt is a serpent biting its own tail; both are symbols of infinity. On the table in front of him are the symbols of the four suits, signifying the elements of natural life.",
                     "Power, skill, concentration, action, resourcefulness, diplomacy, self-confidence. Creation by willpower and desire.",
                     "Reversed: Manipulation, poor planning, latent talents, disgrace, disquiet. Empty promises and illusions."
             },

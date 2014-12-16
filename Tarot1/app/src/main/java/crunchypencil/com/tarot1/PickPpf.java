@@ -144,6 +144,14 @@ public class PickPpf extends Activity{
                 finish();
                 this.startActivity(intent_shuff);
                 break;
+            case R.id.action_main:
+                Intent intent_main = new Intent(this, SelectGame.class);
+                Intent intent3 = new Intent(getApplicationContext(), SelectGame.class);
+                intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent3); // dump everything on top of SelectGame to remove back access
+                finish();
+                this.startActivity(intent_main);
+                break;
             case R.id.action_randshuff:
                 Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
                 finish();
@@ -166,9 +174,9 @@ public class PickPpf extends Activity{
                 break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, ShufflePpf.class);
-                Intent intent3 = new Intent(getApplicationContext(), SelectGame.class);
-                intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent3); // dump everything on top of SelectGame to remove back access
+                Intent intent4 = new Intent(getApplicationContext(), SelectGame.class);
+                intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent4); // dump everything on top of SelectGame to remove back access
                 finish();
                 this.startActivity(intent_ppf);
                 break;

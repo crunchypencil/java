@@ -2,6 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
 
 
+    <item android:id="@+id/action_main"
+        android:icon="@drawable/ic_action_main"
+        android:title="@string/action_main"
+        android:showAsAction="ifRoom" />
+
     <item android:id="@+id/action_shuff"
         android:icon="@drawable/ic_action_deck"
         android:title="@string/action_shuffle"

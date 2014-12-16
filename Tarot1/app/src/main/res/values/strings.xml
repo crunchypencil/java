@@ -8,6 +8,7 @@
     <string name="action_shuffle">Shuffle the deck</string>
     <string name="action_reshuffle">Reshuffle the deck</string>
     <string name="action_pick">Draw a card</string>
+    <string name="action_main">Main Menu</string>
     <string name="action_sound">Sound ON/OFF</string>
     <string name="action_order">Ordered deck</string>
     <string name="action_ppf">Past/Present/Future</string>
