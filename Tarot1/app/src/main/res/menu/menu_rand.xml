@@ -7,25 +7,25 @@
         android:title="@string/action_main"
         android:showAsAction="ifRoom" />
 
-    <!--<item android:id="@+id/action_shuff"
+    <item android:id="@+id/action_shuff"
         android:icon="@drawable/ic_action_deck"
         android:title="@string/action_shuffle"
-        android:showAsAction="ifRoom" />-->
+        android:showAsAction="ifRoom" />
 
-    <item android:id="@+id/action_pic"
+    <!--<item android:id="@+id/action_pic"
         android:icon="@drawable/ic_action_next"
         android:title="@string/action_pick"
-        android:showAsAction="ifRoom" />
+        android:showAsAction="ifRoom" />-->
 
     <item android:id="@+id/action_sound"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_sound"/>
 
-    <item android:id="@+id/action_pick"
-        android:orderInCategory="200"
-        android:showAsAction="never"
-        android:title="@string/action_pick"/>
+    <!--<item android:id="@+id/action_pick"-->
+        <!--android:orderInCategory="200"-->
+        <!--android:showAsAction="never"-->
+        <!--android:title="@string/action_pick"/>-->
 
     <item android:id="@+id/action_shuffle"
         android:orderInCategory="300"

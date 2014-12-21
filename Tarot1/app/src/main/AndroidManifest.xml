@@ -40,6 +40,12 @@
         <activity android:name="crunchypencil.com.tarot1.ShufflePpf"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
+        <activity android:name="crunchypencil.com.tarot1.PickCard2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
+
+
+
     </application>
 
 </manifest>

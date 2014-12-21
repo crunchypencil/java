@@ -1,17 +1,15 @@
 package crunchypencil.com.tarot1;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.view.View.OnClickListener;
-import android.content.Context;
-import android.widget.Toast;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class SelectGame extends Activity {
@@ -82,14 +80,14 @@ public class SelectGame extends Activity {
                 Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
                 this.startActivity(intent_randshuff);
                 break;
-            case R.id.action_pick:
-                Intent intent_pick = new Intent(this, PickCard.class);
-                this.startActivity(intent_pick);
-                break;
-            case R.id.action_pic:
-                Intent intent_pic = new Intent(this, PickCard.class);
-                this.startActivity(intent_pic);
-                break;
+//            case R.id.action_pick:
+//                Intent intent_pick = new Intent(this, PickCard.class);
+//                this.startActivity(intent_pick);
+//                break;
+//            case R.id.action_pic:
+//                Intent intent_pic = new Intent(this, PickCard.class);
+//                this.startActivity(intent_pic);
+//                break;
             case R.id.action_info:
                 Intent intent_info = new Intent(this, Info.class);
                 this.startActivity(intent_info);

@@ -51,14 +51,14 @@ public class Info extends Activity {
                 finish();
                 this.startActivity(intent_randshuff);
                 break;
-            case R.id.action_pick:
-                Intent intent_pick = new Intent(this, PickCard.class);
-                this.startActivity(intent_pick);
-                break;
-            case R.id.action_pic:
-                Intent intent_pic = new Intent(this, PickCard.class);
-                this.startActivity(intent_pic);
-                break;
+//            case R.id.action_pick:
+//                Intent intent_pick = new Intent(this, PickCard.class);
+//                this.startActivity(intent_pick);
+//                break;
+//            case R.id.action_pic:
+//                Intent intent_pic = new Intent(this, PickCard.class);
+//                this.startActivity(intent_pic);
+//                break;
             case R.id.action_info:
                 Intent intent_info = new Intent(this, Info.class);
                 this.startActivity(intent_info);

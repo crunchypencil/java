@@ -19,9 +19,7 @@
             android:layout_height="match_parent"
             android:id="@+id/paspresfutImage1"
             android:src="@drawable/backlo"
-            android:layout_alignParentTop="false"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentStart="false"
+
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_centerInParent="true" />
@@ -52,9 +50,7 @@
             android:layout_height="match_parent"
             android:id="@+id/paspresfutImage2"
             android:src="@drawable/backlo"
-            android:layout_alignParentTop="false"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentStart="false"
+
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_centerInParent="true" />
@@ -85,9 +81,7 @@
             android:layout_height="match_parent"
             android:id="@+id/paspresfutImage3"
             android:src="@drawable/backlo"
-            android:layout_alignParentTop="false"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentStart="false"
+
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_centerInParent="true" />

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/pick"
+    android:background="#FFFFFF" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Name"
+        android:id="@+id/pickCard1"
+        android:textColor="#b34c00"
+        android:textSize="20dp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:maxWidth="290dp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DESCRIPTION"
+        android:id="@+id/pickCard2"
+        android:textColor="#aaaaaa"
+        android:textSize="12dp"
+        android:layout_below="@+id/pickCard1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Description"
+        android:id="@+id/pickCard3"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:layout_below="@+id/pickCard2"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="260dp"
+        android:layout_marginBottom="14dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEANING"
+        android:id="@+id/pickCard4"
+        android:textColor="#aaaaaa"
+        android:textSize="12dp"
+        android:layout_below="@+id/pickCard3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Meaning"
+        android:id="@+id/pickCard5"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:layout_below="@+id/pickCard4"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="260dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pickacardView"
+        android:src="@drawable/back"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick" />
+
+
+
+
+</RelativeLayout>
