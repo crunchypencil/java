@@ -26,12 +26,7 @@ public class PickCard extends FragmentActivity {
         mAdapter = new MyAdapter(getSupportFragmentManager());
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
-
-
     }
-
-
-
 
     public static class MyAdapter extends FragmentStatePagerAdapter {
         public MyAdapter(FragmentManager fragmentManager) {
@@ -46,14 +41,7 @@ public class PickCard extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            switch (position) {
-                case 0: // Fragment # 0 - This will show image
-                    return ImageFragment.init(position);
-                //case 1: // Fragment # 1 - This will show image
-                //    return ImageFragment.init(position);
-                default:// Fragment # 2-9 - Will show list
-                    return ImageFragment.init(position);
-            }
+            return ImageFragment.init(position);
         }
     }
 

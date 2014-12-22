@@ -51,7 +51,7 @@ public class ImageFragment extends Fragment {
 
 
 
-        CardGenerate current = new CardGenerate(Deck.tempdeck[Deck.count], true);
+        CardGenerate current = new CardGenerate(Deck.tempdeck[fragVal], true);
         String uri = "@drawable/"+current.cardImage;
         int imageResource = getResources().getIdentifier(uri, null, PACKAGE_NAME);
         final ImageView cardimg = (ImageView) layoutView.findViewById(R.id.pickacardView);
@@ -99,14 +99,14 @@ public class ImageFragment extends Fragment {
 
 
 
-        Deck.count++;
+        Deck.count = fragVal;
 
 
 
 
 
-//        View tv = layoutView.findViewById(R.id.text);
-//        ((TextView) tv).setText("Card #" + fragVal);
+        View tv = layoutView.findViewById(R.id.text);
+        ((TextView) tv).setText("Card #" + fragVal);
         return layoutView;
     }
 
