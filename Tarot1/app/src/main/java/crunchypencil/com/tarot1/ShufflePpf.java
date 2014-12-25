@@ -25,6 +25,7 @@ public class ShufflePpf extends Activity {
         Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
         Deck.tarotdeck = Deck.addFlip(Deck.deck);
         Deck.count = 0;
+        Deck.hasBeenPicked = new boolean[78];
 
         ImageView shufimg = (ImageView) findViewById(R.id.shuffledeckView);
 

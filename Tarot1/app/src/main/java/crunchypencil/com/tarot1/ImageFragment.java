@@ -20,12 +20,12 @@ public class ImageFragment extends Fragment {
     boolean carddown = false;
 
     static ImageFragment init(int val) {
-        ImageFragment truitonFrag = new ImageFragment();
+        ImageFragment imgFrag = new ImageFragment();
         // Supply val input as an argument.
         Bundle args = new Bundle();
         args.putInt("val", val);
-        truitonFrag.setArguments(args);
-        return truitonFrag;
+        imgFrag.setArguments(args);
+        return imgFrag;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ImageFragment extends Fragment {
                              Bundle savedInstanceState) {
         View layoutView = inflater.inflate(R.layout.image_fragment, container, false);
 
-
+        Deck.hasBeenPicked[fragVal] = true;
         final MediaPlayer mp1 = MediaPlayer.create(getActivity(), R.raw.place);
         final Context context1 = getActivity().getApplicationContext();
 
@@ -70,6 +70,15 @@ public class ImageFragment extends Fragment {
         TextView cardMeaningValue = (TextView) layoutView.findViewById(R.id.pickCard5);
         cardMeaningValue.setText(current.cardMeaning);
 
+        if(Deck.hasContext) {
+            TextView cardContextValue = (TextView) layoutView.findViewById(R.id.pickCard7);
+            cardContextValue.setText(Deck.cardContext[fragVal]);
+        } else {
+            TextView cardContextTitleValue = (TextView) layoutView.findViewById(R.id.pickCard6);
+            cardContextTitleValue.setText("");
+            TextView cardContextValue = (TextView) layoutView.findViewById(R.id.pickCard7);
+            cardContextValue.setText("");
+        }
 
         cardimg.setOnClickListener(new View.OnClickListener() {
 

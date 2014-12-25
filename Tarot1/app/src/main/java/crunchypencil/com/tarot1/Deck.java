@@ -6,6 +6,9 @@ public class Deck {
     static boolean soundon = true;
     static int count = 0;
     static int[] tempdeck = new int[78]; // length of the deck
+    static boolean hasContext = true;
+    static String[] cardContext = new String[12];
+    static boolean[] hasBeenPicked = new boolean[78];
 
     static int[] temparray = Deck.makeArray(); // make dummy array to shuffle
     public static int[] makeArray() {

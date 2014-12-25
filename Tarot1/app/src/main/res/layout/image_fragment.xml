@@ -67,6 +67,31 @@
         android:textSize="16dp"
         android:layout_below="@+id/pickCard4"
         android:layout_centerHorizontal="true"
+        android:maxWidth="260dp"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTEXT"
+        android:id="@+id/pickCard6"
+        android:textColor="#aaaaaa"
+        android:textSize="12dp"
+        android:layout_below="@+id/pickCard5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Context"
+        android:id="@+id/pickCard7"
+        android:textColor="#b34c00"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_below="@+id/pickCard6"
+        android:layout_centerHorizontal="true"
         android:maxWidth="260dp" />
 
     <ImageView

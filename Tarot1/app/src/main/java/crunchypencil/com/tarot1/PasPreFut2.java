@@ -14,10 +14,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 
-public class PickCard extends FragmentActivity {
-    static final int ITEMS = 78;
-    MyAdapter mAdapter;
-    ViewPager mPager;
+public class PasPreFut2 extends FragmentActivity {
+    static final int ITEMS = 5;
+    static MyAdapter mAdapter;
+    static ViewPager mPager;
 
 
     @Override
@@ -27,7 +27,13 @@ public class PickCard extends FragmentActivity {
         mAdapter = new MyAdapter(getSupportFragmentManager());
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
-        Deck.hasContext = false;
+        int pos = 1;
+        pos = getIntent().getExtras().getInt("posit");
+        mPager.setCurrentItem(pos);
+        Deck.hasContext = true;
+        Deck.cardContext[1] = "The Past";
+        Deck.cardContext[2] = "The Present";
+        Deck.cardContext[3] = "The Future";
     }
 
     public static class MyAdapter extends FragmentStatePagerAdapter {
@@ -43,14 +49,27 @@ public class PickCard extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return ImageFragment.init(position);
+            switch (position) {
+                case 0:
+                    return PpfFragment.init(position);
+                case 1:
+                    return ImageFragment.init(position);
+                case 2:
+                    return ImageFragment.init(position);
+                case 3:
+                    return ImageFragment.init(position);
+                case 4:
+                    return PpfFragment.init(position);
+                default:
+                    return PpfFragment.init(position);
+            }
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_rand, menu);
+        getMenuInflater().inflate(R.menu.menu_pasprefut, menu);
         return true;
     }
 
@@ -63,12 +82,12 @@ public class PickCard extends FragmentActivity {
 
         switch (item.getItemId()) {
             case R.id.action_shuffle:
-                Intent intent_shuffle = new Intent(this, ShuffleDeck.class);
+                Intent intent_shuffle = new Intent(this, ShufflePpf.class);
                 finish();
                 this.startActivity(intent_shuffle);
                 break;
             case R.id.action_shuff:
-                Intent intent_shuff = new Intent(this, ShuffleDeck.class);
+                Intent intent_shuff = new Intent(this, ShufflePpf.class);
                 finish();
                 this.startActivity(intent_shuff);
                 break;
@@ -112,7 +131,7 @@ public class PickCard extends FragmentActivity {
                     toast.show();
                 } else {
                     Deck.soundon = true;
-                    MediaPlayer mp2 = MediaPlayer.create(PickCard.this, R.raw.place);
+                    MediaPlayer mp2 = MediaPlayer.create(PasPreFut2.this, R.raw.place);
                     mp2.start();
                     Toast toast = Toast.makeText(context, "Sound ON", duration);
                     toast.show();
