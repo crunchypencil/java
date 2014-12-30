@@ -43,6 +43,9 @@
         <activity android:name="crunchypencil.com.tarot1.PasPreFut2"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
+        <activity android:name="crunchypencil.com.tarot1.CelticCross"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
 
 
 

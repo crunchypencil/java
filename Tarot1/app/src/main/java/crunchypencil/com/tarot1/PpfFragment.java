@@ -29,10 +29,10 @@ public class PpfFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fragVal = getArguments() != null ? getArguments().getInt("val") : 1;
-        final MediaPlayer mp2 = MediaPlayer.create(getActivity(), R.raw.turnover);
-        if(Deck.soundon) {
-            mp2.start();
-        }
+//        final MediaPlayer mp2 = MediaPlayer.create(getActivity(), R.raw.turnover);
+//        if(Deck.soundon) {
+//            mp2.start();
+//        }
     }
 
 

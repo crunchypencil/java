@@ -19,6 +19,7 @@ public class ImageFragment extends Fragment {
     public static final String PACKAGE_NAME = "crunchypencil.com.tarot1";
     boolean carddown = false;
 
+
     static ImageFragment init(int val) {
         ImageFragment imgFrag = new ImageFragment();
         // Supply val input as an argument.
@@ -32,12 +33,8 @@ public class ImageFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fragVal = getArguments() != null ? getArguments().getInt("val") : 1;
-        final MediaPlayer mp2 = MediaPlayer.create(getActivity(), R.raw.turnover);
-        if(Deck.soundon) {
-            mp2.start();
-        }
-    }
 
+    }
 
 
     @Override
@@ -49,7 +46,10 @@ public class ImageFragment extends Fragment {
         final MediaPlayer mp1 = MediaPlayer.create(getActivity(), R.raw.place);
         final Context context1 = getActivity().getApplicationContext();
 
-
+//        final MediaPlayer mp2 = MediaPlayer.create(getActivity(), R.raw.turnover);
+//        if(Deck.soundon) {
+//            mp2.start();
+//        }
 
         CardGenerate current = new CardGenerate(Deck.tempdeck[fragVal], true);
         String uri = "@drawable/"+current.cardImage;
@@ -119,5 +119,15 @@ public class ImageFragment extends Fragment {
         return layoutView;
     }
 
+
+
+//    @Override
+//    public void setUserVisibleHint(boolean isVisibleToUser) {
+//        super.setUserVisibleHint(isVisibleToUser);
+//        final MediaPlayer mp2 = MediaPlayer.create(getActivity(), R.raw.turnover);
+//        if(Deck.soundon) {
+//            mp2.start();
+//        }
+//    }
 
 }

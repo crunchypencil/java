@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#FFFFFF"
+    android:adjustViewBounds="true"
+    android:gravity="center_vertical|center_horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blanklo"
+        android:layout_margin="2dp"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:id="@+id/imageView1"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic4"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_toRightOf="@+id/celtic3"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blanklo"
+        android:layout_margin="2dp"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_alignTop="@+id/celtic4"
+        android:layout_toRightOf="@+id/celtic4"
+        android:id="@+id/imageView2"
+        android:padding="2dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic9"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_alignTop="@+id/celtic4"
+        android:layout_toRightOf="@+id/celtic5"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic3"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_alignTop="@+id/celtic1"
+        android:layout_alignParentLeft="true"
+        android:padding="2sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic1"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_below="@+id/celtic4"
+        android:layout_toRightOf="@+id/celtic3"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic5"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignTop="@+id/celtic1"
+        android:layout_toRightOf="@+id/celtic1"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic8"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignTop="@+id/celtic5"
+        android:layout_toRightOf="@+id/celtic5"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blanklo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:id="@+id/imageView3"
+        android:layout_below="@+id/celtic3"
+        android:layout_alignLeft="@+id/imageView1"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic2"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_toRightOf="@+id/celtic3"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blanklo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:id="@+id/imageView4"
+        android:layout_alignTop="@+id/celtic2"
+        android:layout_toRightOf="@+id/celtic2"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic7"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_toRightOf="@+id/imageView4"
+        android:padding="2dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blanklo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:id="@+id/imageView5"
+        android:padding="2dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentLeft="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blanklo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:id="@+id/imageView6"
+        android:padding="2dp"
+        android:layout_alignTop="@+id/imageView5"
+        android:layout_toRightOf="@+id/imageView5" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blanklo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:id="@+id/imageView7"
+        android:padding="2dp"
+        android:layout_below="@+id/celtic2"
+        android:layout_toRightOf="@+id/celtic2" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic6"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:padding="2dp"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_toRightOf="@+id/imageView7" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celtic0"
+        android:src="@drawable/backlo"
+        android:minWidth="71dp"
+        android:minHeight="100dp"
+        android:padding="2dp"
+        android:layout_below="@+id/celtic4"
+        android:layout_toRightOf="@+id/celtic3" />
+
+
+</RelativeLayout>

@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 
 public class PasPreFut2 extends FragmentActivity {
-    static final int ITEMS = 5;
+    static final int ITEMS = 3;
     static MyAdapter mAdapter;
     static ViewPager mPager;
 
@@ -27,13 +27,17 @@ public class PasPreFut2 extends FragmentActivity {
         mAdapter = new MyAdapter(getSupportFragmentManager());
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
-        int pos = 1;
+        int pos = 0;
         pos = getIntent().getExtras().getInt("posit");
         mPager.setCurrentItem(pos);
         Deck.hasContext = true;
         Deck.cardContext[1] = "The Past";
         Deck.cardContext[2] = "The Present";
         Deck.cardContext[3] = "The Future";
+        if(Deck.soundon) {
+            MediaPlayer mp2 = MediaPlayer.create(PasPreFut2.this, R.raw.turnover);
+            mp2.start();
+        }
     }
 
     public static class MyAdapter extends FragmentStatePagerAdapter {
@@ -51,17 +55,15 @@ public class PasPreFut2 extends FragmentActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return PpfFragment.init(position);
+                    return ImageFragment.init(position);
                 case 1:
                     return ImageFragment.init(position);
                 case 2:
                     return ImageFragment.init(position);
-                case 3:
-                    return ImageFragment.init(position);
-                case 4:
-                    return PpfFragment.init(position);
+//                case 3:
+//                    return PpfFragment.init(position);
                 default:
-                    return PpfFragment.init(position);
+                    return ImageFragment.init(position);
             }
         }
     }
@@ -142,4 +144,6 @@ public class PasPreFut2 extends FragmentActivity {
         }
         return true;
     }
+
+
 }

@@ -28,6 +28,10 @@ public class PickCard extends FragmentActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
         Deck.hasContext = false;
+        if(Deck.soundon) {
+            MediaPlayer mp2 = MediaPlayer.create(PickCard.this, R.raw.turnover);
+            mp2.start();
+        }
     }
 
     public static class MyAdapter extends FragmentStatePagerAdapter {
