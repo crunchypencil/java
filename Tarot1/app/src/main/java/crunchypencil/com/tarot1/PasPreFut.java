@@ -1,16 +1,18 @@
 package crunchypencil.com.tarot1;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.view.View;
-import android.graphics.drawable.Drawable;
-import android.content.Context;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -22,16 +24,19 @@ public class PasPreFut extends Activity {
     static PasPreFut2.MyAdapter mAdapter;
     static ViewPager mPager;
     public static final String PACKAGE_NAME = "crunchypencil.com.tarot1";
+    boolean isGo0;
+    boolean isGo1;
+    boolean isGo2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pasprefut);
 
-        if(Deck.soundon) {
-            MediaPlayer mp2 = MediaPlayer.create(PasPreFut.this, R.raw.turnover);
-            mp2.start();
-        }
+        isGo0 = false;
+        isGo1 = false;
+        isGo2 = false;
+
+        setContentView(R.layout.activity_pasprefut);
 
         final ImageView img0 = (ImageView) findViewById(R.id.paspresfutImage1);
         final ImageView img1 = (ImageView) findViewById(R.id.paspresfutImage2);
@@ -41,101 +46,151 @@ public class PasPreFut extends Activity {
         final String img1pick = Deck.tarotdeck[Deck.tempdeck[1]][2];
         final String img2pick = Deck.tarotdeck[Deck.tempdeck[2]][2];
 
-        if(Deck.hasBeenPicked[0]){
-            String uri = "@drawable/"+img0pick;
-            int imageResource0 = getResources().getIdentifier(uri, null, getPackageName());
-            Drawable res0 = getResources().getDrawable(imageResource0);
-            img0.setImageDrawable(res0);
-            if(Deck.tarotdeck[Deck.tempdeck[0]][1].equals("false")) {  // turn image upside down if !cardUp
-                img0.setScaleX(-1);
-                img0.setScaleY(-1);
-            }
-        }
-        if(Deck.hasBeenPicked[0]){
-            String uri = "@drawable/"+img1pick;
-            int imageResource1 = getResources().getIdentifier(uri, null, getPackageName());
-            Drawable res1 = getResources().getDrawable(imageResource1);
-            img0.setImageDrawable(res1);
-            if(Deck.tarotdeck[Deck.tempdeck[1]][1].equals("false")) {  // turn image upside down if !cardUp
-                img0.setScaleX(-1);
-                img0.setScaleY(-1);
-            }
-        }
-        if(Deck.hasBeenPicked[0]){
-            String uri = "@drawable/"+img2pick;
-            int imageResource2 = getResources().getIdentifier(uri, null, getPackageName());
-            Drawable res2 = getResources().getDrawable(imageResource2);
-            img0.setImageDrawable(res2);
-            if(Deck.tarotdeck[Deck.tempdeck[2]][1].equals("false")) {  // turn image upside down if !cardUp
-                img0.setScaleX(-1);
-                img0.setScaleY(-1);
-            }
-        }
+        final AnimatorSet setRightOut = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(),
+                R.animator.flight_right_out);
+        final AnimatorSet setLeftIn = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(),
+                R.animator.flight_left_in);
 
         img0.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String uri = "@drawable/"+img0pick;
-                int imageResource0 = getResources().getIdentifier(uri, null, getPackageName());
-                Drawable res0 = getResources().getDrawable(imageResource0);
-                img0.setImageDrawable(res0);
+                if (!isGo0) {
+                    if (Deck.tarotdeck[Deck.tempdeck[0]][1].equals("false")) {  // turn image upside down if !cardUp
+                        img0.setScaleX(-1);
+                        img0.setScaleY(-1);
+                    }
+                    if(Deck.soundon) {
+                        MediaPlayer mp2 = MediaPlayer.create(PasPreFut.this, R.raw.turnover);
+                        mp2.start();
+                    }
+                    setRightOut.setTarget(img0);
 
-                if(Deck.tarotdeck[Deck.tempdeck[0]][1].equals("false")) {  // turn image upside down if !cardUp
-                    img0.setScaleX(-1);
-                    img0.setScaleY(-1);
+                    String uri0 = "@drawable/" + img0pick;
+                    int imageResource0 = getResources().getIdentifier(uri0, null, getPackageName());
+                    Drawable res0 = getResources().getDrawable(imageResource0);
+                    img0.setImageDrawable(res0);
+
+                    setLeftIn.setTarget(img0);
+                    setRightOut.start();
+                    setLeftIn.start();
+
+                    isGo0 = true;
+                } else {
+                    Intent intent_1 = new Intent(PasPreFut.this, PasPreFut2.class);
+                    Deck.hasBeenPicked[0] = true;
+                    intent_1.putExtra("posit", 0);
+                    startActivity(intent_1);
+                    showAllCards();
                 }
-                Intent intent_1 = new Intent(PasPreFut.this, PasPreFut2.class);
-                Deck.hasBeenPicked[0] = true;
-                intent_1.putExtra("posit", 0);
-                startActivity(intent_1);
             }
         });
 
         img1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String uri = "@drawable/"+img1pick;
-                int imageResource1 = getResources().getIdentifier(uri, null, getPackageName());
-                Drawable res1 = getResources().getDrawable(imageResource1);
-                img1.setImageDrawable(res1);
+                if (!isGo1) {
+                    if (Deck.tarotdeck[Deck.tempdeck[1]][1].equals("false")) {  // turn image upside down if !cardUp
+                        img1.setScaleX(-1);
+                        img1.setScaleY(-1);
+                    }
+                    if(Deck.soundon) {
+                        MediaPlayer mp2 = MediaPlayer.create(PasPreFut.this, R.raw.turnover);
+                        mp2.start();
+                    }
+                    setRightOut.setTarget(img1);
 
-                if(Deck.tarotdeck[Deck.tempdeck[1]][1].equals("false")) {  // turn image upside down if !cardUp
-                    img1.setScaleX(-1);
-                    img1.setScaleY(-1);
+                    String uri1 = "@drawable/" + img1pick;
+                    int imageResource1 = getResources().getIdentifier(uri1, null, getPackageName());
+                    Drawable res1 = getResources().getDrawable(imageResource1);
+                    img1.setImageDrawable(res1);
+
+                    setLeftIn.setTarget(img1);
+                    setRightOut.start();
+                    setLeftIn.start();
+
+                    isGo1 = true;
+                } else {
+                    Intent intent_2 = new Intent(PasPreFut.this, PasPreFut2.class);
+                    Deck.hasBeenPicked[1] = true;
+                    intent_2.putExtra("posit", 1);
+                    startActivity(intent_2);
+                    showAllCards();
                 }
-                Intent intent_2 = new Intent(PasPreFut.this, PasPreFut2.class);
-                Deck.hasBeenPicked[1] = true;
-                intent_2.putExtra("posit", 1);
-                startActivity(intent_2);
             }
         });
 
         img2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String uri = "@drawable/"+img2pick;
-                int imageResource2 = getResources().getIdentifier(uri, null, getPackageName());
-                Drawable res2 = getResources().getDrawable(imageResource2);
-                img2.setImageDrawable(res2);
+                if (!isGo2) {
+                    if (Deck.tarotdeck[Deck.tempdeck[2]][1].equals("false")) {  // turn image upside down if !cardUp
+                        img0.setScaleX(-1);
+                        img0.setScaleY(-1);
+                    }
+                    if(Deck.soundon) {
+                        MediaPlayer mp2 = MediaPlayer.create(PasPreFut.this, R.raw.turnover);
+                        mp2.start();
+                    }
+                    setRightOut.setTarget(img2);
 
-                if(Deck.tarotdeck[Deck.tempdeck[2]][1].equals("false")) {  // turn image upside down if !cardUp
-                    img2.setScaleX(-1);
-                    img2.setScaleY(-1);
+                    String uri2 = "@drawable/" + img2pick;
+                    int imageResource2 = getResources().getIdentifier(uri2, null, getPackageName());
+                    Drawable res2 = getResources().getDrawable(imageResource2);
+                    img2.setImageDrawable(res2);
+
+                    setLeftIn.setTarget(img2);
+                    setRightOut.start();
+                    setLeftIn.start();
+
+                    isGo2 = true;
+                } else {
+                    Intent intent_3 = new Intent(PasPreFut.this, PasPreFut2.class);
+                    Deck.hasBeenPicked[2] = true;
+                    intent_3.putExtra("posit", 2);
+                    startActivity(intent_3);
+                    showAllCards();
                 }
-                Intent intent_3 = new Intent(PasPreFut.this, PasPreFut2.class);
-                Deck.hasBeenPicked[2] = true;
-                intent_3.putExtra("posit", 2);
-                startActivity(intent_3);
             }
         });
-
-
-
-
-
-
     }
 
+    public void showAllCards(){
+        final ImageView img0 = (ImageView) findViewById(R.id.paspresfutImage1);
+        final ImageView img1 = (ImageView) findViewById(R.id.paspresfutImage2);
+        final ImageView img2 = (ImageView) findViewById(R.id.paspresfutImage3);
+
+        final String img0pick = Deck.tarotdeck[Deck.tempdeck[0]][2];
+        final String img1pick = Deck.tarotdeck[Deck.tempdeck[1]][2];
+        final String img2pick = Deck.tarotdeck[Deck.tempdeck[2]][2];
+
+        String uri0 = "@drawable/"+img0pick;
+        int imageResource0 = getResources().getIdentifier(uri0, null, getPackageName());
+        Drawable res0 = getResources().getDrawable(imageResource0);
+        img0.setImageDrawable(res0);
+
+        if(Deck.tarotdeck[Deck.tempdeck[0]][1].equals("false")) {  // turn image upside down if !cardUp
+            img0.setScaleX(-1);
+            img0.setScaleY(-1);
+        }
+        String uri1 = "@drawable/"+img1pick;
+        int imageResource1 = getResources().getIdentifier(uri1, null, getPackageName());
+        Drawable res1 = getResources().getDrawable(imageResource1);
+        img1.setImageDrawable(res1);
+
+        if(Deck.tarotdeck[Deck.tempdeck[1]][1].equals("false")) {  // turn image upside down if !cardUp
+            img1.setScaleX(-1);
+            img1.setScaleY(-1);
+        }
+        String uri2 = "@drawable/"+img2pick;
+        int imageResource2 = getResources().getIdentifier(uri2, null, getPackageName());
+        Drawable res2 = getResources().getDrawable(imageResource2);
+        img2.setImageDrawable(res2);
+
+        if(Deck.tarotdeck[Deck.tempdeck[2]][1].equals("false")) {  // turn image upside down if !cardUp
+            img2.setScaleX(-1);
+            img2.setScaleY(-1);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -184,6 +239,11 @@ public class PasPreFut extends Activity {
                 finish();
                 this.startActivity(intent_ppf);
                 break;
+            case R.id.action_ccr:
+                Intent intent_ccr = new Intent(this, ShuffleCcr.class);
+                finish();
+                this.startActivity(intent_ccr);
+                break;
             case R.id.action_sound:
                 if(Deck.soundon){
                     Deck.soundon = false;
@@ -202,6 +262,4 @@ public class PasPreFut extends Activity {
         }
         return true;
     }
-
-
 }

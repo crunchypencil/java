@@ -28,7 +28,7 @@ public class SelectGame extends Activity {
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
-                startActivity(new Intent(SelectGame.this, CelticCross.class));
+                startActivity(new Intent(SelectGame.this, ShuffleCcr.class));
             }
         });
 
@@ -95,6 +95,11 @@ public class SelectGame extends Activity {
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, ShufflePpf.class);
                 this.startActivity(intent_ppf);
+                break;
+            case R.id.action_ccr:
+                Intent intent_ccr = new Intent(this, ShuffleCcr.class);
+                finish();
+                this.startActivity(intent_ccr);
                 break;
             case R.id.action_sound:
                 if(Deck.soundon){

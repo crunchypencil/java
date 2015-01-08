@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+
+    <item android:id="@+id/action_main"
+        android:icon="@drawable/ic_action_main"
+        android:title="@string/action_main"
+        android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_shuff"
+        android:icon="@drawable/ic_action_deck"
+        android:title="@string/action_shuffle"
+        android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_sound"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_sound"/>
+
+    <item android:id="@+id/action_shuffle"
+        android:orderInCategory="200"
+        android:showAsAction="never"
+        android:title="@string/action_reshuffle"/>
+
+    <item android:id="@+id/action_ppf"
+        android:orderInCategory="400"
+        android:showAsAction="never"
+        android:title="@string/action_ppf"/>
+
+    <item android:id="@+id/action_randshuff"
+        android:orderInCategory="400"
+        android:showAsAction="never"
+        android:title="@string/action_randshuff"/>
+
+
+
+</menu>

@@ -1,72 +1,62 @@
 package crunchypencil.com.tarot1;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.media.MediaPlayer;
 import android.widget.Toast;
+import android.content.Context;
 
 
-public class PasPreFut2 extends FragmentActivity {
-    static final int ITEMS = 3;
-    static MyAdapter mAdapter;
-    static ViewPager mPager;
-
+/**
+ * Created by davidcahill on 11/12/14.
+ */
+public class ShuffleCcr extends Activity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_pager);
-        mAdapter = new MyAdapter(getSupportFragmentManager());
-        mPager = (ViewPager) findViewById(R.id.pager);
-        mPager.setAdapter(mAdapter);
-        int pos = 0;
-        pos = getIntent().getExtras().getInt("posit");
-        mPager.setCurrentItem(pos);
-        Deck.hasContext = true;
-        Deck.cardContext[0] = "The Past";
-        Deck.cardContext[1] = "The Present";
-        Deck.cardContext[2] = "The Future";
+        setContentView(R.layout.activity_shuffle);
+
+        Deck.tempdeck = Deck.shuffleArray(Deck.temparray);
+        Deck.tarotdeck = Deck.addFlip(Deck.deck);
+        Deck.count = 0;
+        Deck.hasBeenPicked = new boolean[78];
+
+        ImageView shufimg = (ImageView) findViewById(R.id.shuffledeckView);
+
+
         if(Deck.soundon) {
-            MediaPlayer mp2 = MediaPlayer.create(PasPreFut2.this, R.raw.turnover);
-            mp2.start();
-        }
-    }
-
-    public static class MyAdapter extends FragmentStatePagerAdapter {
-        public MyAdapter(FragmentManager fragmentManager) {
-            super(fragmentManager);
+            MediaPlayer mp = MediaPlayer.create(ShuffleCcr.this, R.raw.shuffling);
+            mp.start();
         }
 
 
-        @Override
-        public int getCount() {
-            return ITEMS;
-        }
+        shufimg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
 
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0:
-                    return ImageFragment.init(position);
-                case 1:
-                    return ImageFragment.init(position);
-                case 2:
-                    return ImageFragment.init(position);
-//                case 3:
-//                    return PpfFragment.init(position);
-                default:
-                    return ImageFragment.init(position);
+                Intent intent1 = new Intent(getApplicationContext(), SelectGame.class);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent1); // dump everything on top of SelectGame to remove back access
+                finish();
+                startActivity(new Intent(ShuffleCcr.this, CelticCross.class));
             }
-        }
+        });
+
+
+
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, "Shuffle", duration);
+        toast.show();
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,14 +65,13 @@ public class PasPreFut2 extends FragmentActivity {
         return true;
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
 
-        switch (item.getItemId()) {
+        switch(item.getItemId()) {
             case R.id.action_shuffle:
                 Intent intent_shuffle = new Intent(this, ShufflePpf.class);
                 finish();
@@ -126,19 +115,14 @@ public class PasPreFut2 extends FragmentActivity {
                 finish();
                 this.startActivity(intent_ppf);
                 break;
-            case R.id.action_ccr:
-                Intent intent_ccr = new Intent(this, ShuffleCcr.class);
-                finish();
-                this.startActivity(intent_ccr);
-                break;
             case R.id.action_sound:
-                if (Deck.soundon) {
+                if(Deck.soundon){
                     Deck.soundon = false;
                     Toast toast = Toast.makeText(context, "Sound OFF", duration);
                     toast.show();
                 } else {
                     Deck.soundon = true;
-                    MediaPlayer mp2 = MediaPlayer.create(PasPreFut2.this, R.raw.place);
+                    MediaPlayer mp2 = MediaPlayer.create(ShuffleCcr.this, R.raw.place);
                     mp2.start();
                     Toast toast = Toast.makeText(context, "Sound ON", duration);
                     toast.show();

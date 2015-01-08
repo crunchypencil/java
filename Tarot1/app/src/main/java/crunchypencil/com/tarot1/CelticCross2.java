@@ -14,8 +14,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 
-public class PasPreFut2 extends FragmentActivity {
-    static final int ITEMS = 3;
+public class CelticCross2 extends FragmentActivity {
+    static final int ITEMS = 10;
     static MyAdapter mAdapter;
     static ViewPager mPager;
 
@@ -31,11 +31,18 @@ public class PasPreFut2 extends FragmentActivity {
         pos = getIntent().getExtras().getInt("posit");
         mPager.setCurrentItem(pos);
         Deck.hasContext = true;
-        Deck.cardContext[0] = "The Past";
-        Deck.cardContext[1] = "The Present";
-        Deck.cardContext[2] = "The Future";
+        Deck.cardContext[0] = "The Immediate Challenge";
+        Deck.cardContext[1] = "The Distant Past";
+        Deck.cardContext[2] = "The Recent Past";
+        Deck.cardContext[3] = "The Immediate Future";
+        Deck.cardContext[4] = "The Outcome";
+        Deck.cardContext[5] = "The Potential";
+        Deck.cardContext[6] = "Factors Affecting The Situation";
+        Deck.cardContext[7] = "External Influences";
+        Deck.cardContext[8] = "Hopes and Fears";
+        Deck.cardContext[9] = "The Final Outcome";
         if(Deck.soundon) {
-            MediaPlayer mp2 = MediaPlayer.create(PasPreFut2.this, R.raw.turnover);
+            MediaPlayer mp2 = MediaPlayer.create(CelticCross2.this, R.raw.turnover);
             mp2.start();
         }
     }
@@ -60,6 +67,20 @@ public class PasPreFut2 extends FragmentActivity {
                     return ImageFragment.init(position);
                 case 2:
                     return ImageFragment.init(position);
+                case 3:
+                    return ImageFragment.init(position);
+                case 4:
+                    return ImageFragment.init(position);
+                case 5:
+                    return ImageFragment.init(position);
+                case 6:
+                    return ImageFragment.init(position);
+                case 7:
+                    return ImageFragment.init(position);
+                case 8:
+                    return ImageFragment.init(position);
+                case 9:
+                    return ImageFragment.init(position);
 //                case 3:
 //                    return PpfFragment.init(position);
                 default:
@@ -71,7 +92,7 @@ public class PasPreFut2 extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_pasprefut, menu);
+        getMenuInflater().inflate(R.menu.menu_celtic, menu);
         return true;
     }
 
@@ -84,12 +105,12 @@ public class PasPreFut2 extends FragmentActivity {
 
         switch (item.getItemId()) {
             case R.id.action_shuffle:
-                Intent intent_shuffle = new Intent(this, ShufflePpf.class);
+                Intent intent_shuffle = new Intent(this, ShuffleCcr.class);
                 finish();
                 this.startActivity(intent_shuffle);
                 break;
             case R.id.action_shuff:
-                Intent intent_shuff = new Intent(this, ShufflePpf.class);
+                Intent intent_shuff = new Intent(this, ShuffleCcr.class);
                 finish();
                 this.startActivity(intent_shuff);
                 break;
@@ -126,11 +147,6 @@ public class PasPreFut2 extends FragmentActivity {
                 finish();
                 this.startActivity(intent_ppf);
                 break;
-            case R.id.action_ccr:
-                Intent intent_ccr = new Intent(this, ShuffleCcr.class);
-                finish();
-                this.startActivity(intent_ccr);
-                break;
             case R.id.action_sound:
                 if (Deck.soundon) {
                     Deck.soundon = false;
@@ -138,7 +154,7 @@ public class PasPreFut2 extends FragmentActivity {
                     toast.show();
                 } else {
                     Deck.soundon = true;
-                    MediaPlayer mp2 = MediaPlayer.create(PasPreFut2.this, R.raw.place);
+                    MediaPlayer mp2 = MediaPlayer.create(CelticCross2.this, R.raw.place);
                     mp2.start();
                     Toast toast = Toast.makeText(context, "Sound ON", duration);
                     toast.show();

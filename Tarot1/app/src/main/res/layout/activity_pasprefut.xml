@@ -19,10 +19,11 @@
             android:layout_height="match_parent"
             android:id="@+id/paspresfutImage1"
             android:src="@drawable/backlo"
-
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_centerInParent="true" />
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -50,10 +51,10 @@
             android:layout_height="match_parent"
             android:id="@+id/paspresfutImage2"
             android:src="@drawable/backlo"
-
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_centerInParent="true" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,7 +82,6 @@
             android:layout_height="match_parent"
             android:id="@+id/paspresfutImage3"
             android:src="@drawable/backlo"
-
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_centerInParent="true" />

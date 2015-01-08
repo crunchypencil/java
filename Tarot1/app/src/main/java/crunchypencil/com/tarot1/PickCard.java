@@ -109,6 +109,11 @@ public class PickCard extends FragmentActivity {
                 finish();
                 this.startActivity(intent_ppf);
                 break;
+            case R.id.action_ccr:
+                Intent intent_ccr = new Intent(this, ShuffleCcr.class);
+                finish();
+                this.startActivity(intent_ccr);
+                break;
             case R.id.action_sound:
                 if (Deck.soundon) {
                     Deck.soundon = false;
