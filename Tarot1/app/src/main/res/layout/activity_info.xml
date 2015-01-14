@@ -4,41 +4,20 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:id="@+id/info"
+    android:id="@+id/shuffle"
     android:background="#FFFFFF"
     android:longClickable="true">
 
+
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/fatebrowser_title"
-        android:layout_marginTop="0dp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:text="I created Fate Browser because I wanted a mobile deck of tarot cards that offered a more authentic experience including the inverted cards and inverse meanings. \n\nFate Browser Tarot utilizes the Rider-Waite tarot deck published in 1910 by the Rider Company, illustrated by Pamela Colman Smith under the direction of mystic A.E. Waite. \n\nFate Browser does not use, collect or share any of your data and contains no malware or adware."
-        android:id="@+id/textView"
-        android:maxWidth="260dp"
-        android:layout_below="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainInfoImage"
+        android:src="@drawable/key"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:textColor="#666666" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="\u00A92014 Crunchy Pencil SoftWorks"
-        android:id="@+id/textView2"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:textColor="#999999" />
-
+        android:onClick="onClick" />
 
 
 

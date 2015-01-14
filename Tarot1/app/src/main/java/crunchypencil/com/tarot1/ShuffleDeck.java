@@ -100,11 +100,11 @@ public class ShuffleDeck extends Activity {
 //                finish();
 //                this.startActivity(intent_pic);
 //                break;
-            case R.id.action_info:
-                Intent intent_info = new Intent(this, Info.class);
-                finish();
-                this.startActivity(intent_info);
-                break;
+//            case R.id.action_info:
+//                Intent intent_info = new Intent(this, Info.class);
+//                finish();
+//                this.startActivity(intent_info);
+//                break;
             case R.id.action_ccr:
                 Intent intent_ccr = new Intent(this, ShuffleCcr.class);
                 finish();

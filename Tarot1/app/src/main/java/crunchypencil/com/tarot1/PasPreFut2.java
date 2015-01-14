@@ -60,8 +60,6 @@ public class PasPreFut2 extends FragmentActivity {
                     return ImageFragment.init(position);
                 case 2:
                     return ImageFragment.init(position);
-//                case 3:
-//                    return PpfFragment.init(position);
                 default:
                     return ImageFragment.init(position);
             }
@@ -116,11 +114,11 @@ public class PasPreFut2 extends FragmentActivity {
 //                finish();
 //                this.startActivity(intent_pic);
 //                break;
-            case R.id.action_info:
-                Intent intent_info = new Intent(this, Info.class);
-                finish();
-                this.startActivity(intent_info);
-                break;
+//            case R.id.action_info:
+//                Intent intent_info = new Intent(this, Info.class);
+//                finish();
+//                this.startActivity(intent_info);
+//                break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, ShufflePpf.class);
                 finish();
@@ -149,6 +147,4 @@ public class PasPreFut2 extends FragmentActivity {
         }
         return true;
     }
-
-
 }

@@ -103,13 +103,13 @@
         android:layout_centerHorizontal="true"
         android:onClick="onClick" />
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="hello world"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <!--<TextView-->
+        <!--android:id="@+id/text"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center_vertical|center_horizontal"-->
+        <!--android:text="hello world"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
 
 
 

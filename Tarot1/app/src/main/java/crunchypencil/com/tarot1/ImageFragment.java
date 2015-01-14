@@ -46,11 +46,6 @@ public class ImageFragment extends Fragment {
         final MediaPlayer mp1 = MediaPlayer.create(getActivity(), R.raw.place);
         final Context context1 = getActivity().getApplicationContext();
 
-//        final MediaPlayer mp2 = MediaPlayer.create(getActivity(), R.raw.turnover);
-//        if(Deck.soundon) {
-//            mp2.start();
-//        }
-
         CardGenerate current = new CardGenerate(Deck.tempdeck[fragVal], true);
         String uri = "@drawable/"+current.cardImage;
         int imageResource = getResources().getIdentifier(uri, null, PACKAGE_NAME);
@@ -87,17 +82,13 @@ public class ImageFragment extends Fragment {
                 Animation cardSlideAnimation1 = AnimationUtils.loadAnimation(context1, R.anim.move_down);
                 Animation cardSlideAnimation2 = AnimationUtils.loadAnimation(context1, R.anim.move_up);
                 if(carddown){
-                    if (Deck.soundon) {
-                        mp1.start();
-                    }
+                    if (Deck.soundon) { mp1.start(); }
                     cardimg.startAnimation(cardSlideAnimation2);
                     cardSlideAnimation2.setFillAfter(true);
                     carddown = false;
 
                 } else {
-                    if (Deck.soundon) {
-                        mp1.start();
-                    }
+                    if (Deck.soundon) { mp1.start(); }
                     cardimg.startAnimation(cardSlideAnimation1);
                     cardSlideAnimation1.setFillAfter(true);
                     carddown = true;
@@ -105,29 +96,11 @@ public class ImageFragment extends Fragment {
             }
         });
 
-
-
-
         Deck.count = fragVal;
 
-
-
-
-
-        View tv = layoutView.findViewById(R.id.text);
-        ((TextView) tv).setText("Card #" + fragVal);
+//        View tv = layoutView.findViewById(R.id.text);
+//        ((TextView) tv).setText("Card #" + fragVal);
         return layoutView;
     }
-
-
-
-//    @Override
-//    public void setUserVisibleHint(boolean isVisibleToUser) {
-//        super.setUserVisibleHint(isVisibleToUser);
-//        final MediaPlayer mp2 = MediaPlayer.create(getActivity(), R.raw.turnover);
-//        if(Deck.soundon) {
-//            mp2.start();
-//        }
-//    }
 
 }

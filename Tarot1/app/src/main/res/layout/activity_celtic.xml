@@ -20,7 +20,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/celtic3"
+            android:id="@+id/celtic5"
             android:src="@drawable/back"
             android:layout_weight=".25"
             android:padding="4dp"
@@ -45,49 +45,62 @@
             android:layout_weight=".25"
             android:maxWidth="59dp"
             android:maxHeight="100dp"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="4dp"
-            android:paddingTop="20dp"
-            android:paddingRight="4dp"
-            android:paddingBottom="0dp" />
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_margin="0dp"
+            android:padding="4dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".25">
-            <ImageView
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/celtic1"
-                android:src="@drawable/back"
-                android:layout_weight=".25"
-                android:padding="4dp"
-                android:maxWidth="59dp"
-                android:maxHeight="100dp"/>
-            <ImageView
+                android:layout_height="match_parent" >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/celtic1"
+                    android:src="@drawable/back"
+                    android:layout_weight=".25"
+                    android:maxWidth="59dp"
+                    android:maxHeight="100dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp" />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/celtic0"
-                android:src="@drawable/back"
-                android:layout_weight=".25"
-                android:padding="4dp"
-                android:maxWidth="59dp"
-                android:maxHeight="100dp"/>
+                android:layout_height="match_parent" >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/celtic0"
+                    android:src="@drawable/back"
+                    android:layout_weight=".25"
+                    android:maxWidth="59dp"
+                    android:maxHeight="100dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp" />
+            </LinearLayout>
         </RelativeLayout>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/celtic2"
+            android:id="@+id/celtic3"
             android:src="@drawable/back"
             android:layout_weight=".25"
             android:maxWidth="59dp"
             android:maxHeight="100dp"
-            android:layout_marginBottom="20dp"
-            android:paddingLeft="4dp"
-            android:paddingTop="0dp"
-            android:paddingRight="4dp"
-            android:paddingBottom="20dp" />
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_margin="0dp"
+            android:padding="4dp" />
 
 
 
@@ -102,7 +115,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/celtic5"
+            android:id="@+id/celtic2"
             android:src="@drawable/back"
             android:layout_weight=".25"
             android:padding="4dp"

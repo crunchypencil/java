@@ -110,11 +110,11 @@ public class ShufflePpf extends Activity {
                 finish();
                 this.startActivity(intent_ccr);
                 break;
-            case R.id.action_info:
-                Intent intent_info = new Intent(this, Info.class);
-                finish();
-                this.startActivity(intent_info);
-                break;
+//            case R.id.action_info:
+//                Intent intent_info = new Intent(this, Info.class);
+//                finish();
+//                this.startActivity(intent_info);
+//                break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, ShufflePpf.class);
                 finish();

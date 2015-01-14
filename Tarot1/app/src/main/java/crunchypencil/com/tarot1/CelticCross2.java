@@ -31,12 +31,12 @@ public class CelticCross2 extends FragmentActivity {
         pos = getIntent().getExtras().getInt("posit");
         mPager.setCurrentItem(pos);
         Deck.hasContext = true;
-        Deck.cardContext[0] = "The Immediate Challenge";
-        Deck.cardContext[1] = "The Distant Past";
-        Deck.cardContext[2] = "The Recent Past";
-        Deck.cardContext[3] = "The Immediate Future";
-        Deck.cardContext[4] = "The Outcome";
-        Deck.cardContext[5] = "The Potential";
+        Deck.cardContext[0] = "The Present";
+        Deck.cardContext[1] = "The Challenge";
+        Deck.cardContext[2] = "The Distant Past";
+        Deck.cardContext[3] = "The Recent Past";
+        Deck.cardContext[4] = "The Best Outcome";
+        Deck.cardContext[5] = "The Future";
         Deck.cardContext[6] = "Factors Affecting The Situation";
         Deck.cardContext[7] = "External Influences";
         Deck.cardContext[8] = "Hopes and Fears";
@@ -81,8 +81,6 @@ public class CelticCross2 extends FragmentActivity {
                     return ImageFragment.init(position);
                 case 9:
                     return ImageFragment.init(position);
-//                case 3:
-//                    return PpfFragment.init(position);
                 default:
                     return ImageFragment.init(position);
             }
@@ -109,11 +107,11 @@ public class CelticCross2 extends FragmentActivity {
                 finish();
                 this.startActivity(intent_shuffle);
                 break;
-            case R.id.action_shuff:
-                Intent intent_shuff = new Intent(this, ShuffleCcr.class);
-                finish();
-                this.startActivity(intent_shuff);
-                break;
+//            case R.id.action_shuff:
+//                Intent intent_shuff = new Intent(this, ShuffleCcr.class);
+//                finish();
+//                this.startActivity(intent_shuff);
+//                break;
             case R.id.action_main:
                 Intent intent_main = new Intent(this, SelectGame.class);
                 Intent intent3 = new Intent(getApplicationContext(), SelectGame.class);
@@ -122,11 +120,11 @@ public class CelticCross2 extends FragmentActivity {
                 finish();
                 this.startActivity(intent_main);
                 break;
-            case R.id.action_randshuff:
-                Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
-                finish();
-                this.startActivity(intent_randshuff);
-                break;
+//            case R.id.action_randshuff:
+//                Intent intent_randshuff = new Intent(this, ShuffleDeck.class);
+//                finish();
+//                this.startActivity(intent_randshuff);
+//                break;
 //            case R.id.action_pick:
 //                Intent intent_pick = new Intent(this, PickCard.class);
 //                finish();
@@ -139,7 +137,7 @@ public class CelticCross2 extends FragmentActivity {
 //                break;
             case R.id.action_info:
                 Intent intent_info = new Intent(this, Info.class);
-                finish();
+//                finish();
                 this.startActivity(intent_info);
                 break;
             case R.id.action_ppf:
@@ -165,6 +163,4 @@ public class CelticCross2 extends FragmentActivity {
         }
         return true;
     }
-
-
 }

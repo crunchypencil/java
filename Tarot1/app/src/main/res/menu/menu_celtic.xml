@@ -7,9 +7,9 @@
         android:title="@string/action_main"
         android:showAsAction="ifRoom" />
 
-    <item android:id="@+id/action_shuff"
-        android:icon="@drawable/ic_action_deck"
-        android:title="@string/action_shuffle"
+    <item android:id="@+id/action_info"
+        android:icon="@drawable/ic_action_info"
+        android:title="@string/action_info"
         android:showAsAction="ifRoom" />
 
     <item android:id="@+id/action_sound"

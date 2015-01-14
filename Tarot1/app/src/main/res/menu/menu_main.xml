@@ -12,10 +12,10 @@
         android:title="@string/action_pick"
         android:showAsAction="ifRoom" />-->
 
-    <item android:id="@+id/action_info"
-        android:title="@string/action_info"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+    <!--<item android:id="@+id/action_info"-->
+        <!--android:title="@string/action_info"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:showAsAction="never" />-->
 
     <item android:id="@+id/action_sound"
         android:orderInCategory="200"

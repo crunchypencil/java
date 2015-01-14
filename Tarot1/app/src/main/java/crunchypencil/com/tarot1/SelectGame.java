@@ -88,10 +88,10 @@ public class SelectGame extends Activity {
 //                Intent intent_pic = new Intent(this, PickCard.class);
 //                this.startActivity(intent_pic);
 //                break;
-            case R.id.action_info:
-                Intent intent_info = new Intent(this, Info.class);
-                this.startActivity(intent_info);
-                break;
+//            case R.id.action_info:
+//                Intent intent_info = new Intent(this, Info.class);
+//                this.startActivity(intent_info);
+//                break;
             case R.id.action_ppf:
                 Intent intent_ppf = new Intent(this, ShufflePpf.class);
                 this.startActivity(intent_ppf);
